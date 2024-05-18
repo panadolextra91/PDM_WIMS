@@ -1,0 +1,98 @@
+.root-pane {
+    -fx-background-color: #1a1a1a;
+}
+
+.vbox-pane {
+    -fx-background-color: #1a1a1a;
+}
+
+.title-label {
+    -fx-text-fill: white;
+    -fx-font-size: 30pt;
+    -fx-font-weight: bold;
+    -fx-font-family: 'Impact';
+    -fx-effect: dropshadow(one-pass-box, hotpink, 8, 0.0, 2, 0);
+}
+
+.search-field {
+    -fx-background-color: #212121;
+    -fx-text-fill: white;
+    -fx-font-size: 15pt;
+    -fx-background-radius: 10; /* Add background radius */
+    -fx-border-color: white; /* Add border color */
+    -fx-border-width: 0.5; /* Add border width */
+    -fx-border-radius: 10; /* Add border radius */
+}
+
+.table-view {
+    -fx-background-color: #212121;
+    -fx-text-fill: white;
+}
+
+.add-button {
+    -fx-font-weight: bold;
+    -fx-font-size: 20pt;
+    -fx-font-family: 'Impact';
+    -fx-effect: dropshadow(one-pass-box, greenyellow, 8, 0.0, 2, 0);
+    -fx-transition: all 0.3s ease;
+}
+
+.add-button:hover {
+    -fx-font-size: 22pt; /* Increase font size on hover */
+    -fx-scale-x: 1.1; /* Scale button size on hover */
+    -fx-scale-y: 1.1;
+    -fx-cursor: pointer;
+}
+
+.update-button {
+    -fx-font-weight: bold;
+    -fx-font-size: 20pt;
+    -fx-font-family: 'Impact';
+    -fx-effect: dropshadow(one-pass-box, aqua, 8, 0.0, 2, 0);
+    -fx-transition: all 0.3s ease;
+}
+
+.update-button:hover {
+    -fx-font-size: 22pt; /* Increase font size on hover */
+    -fx-scale-x: 1.1; /* Scale button size on hover */
+    -fx-scale-y: 1.1;
+    -fx-cursor: pointer;
+}
+
+.back-button {
+    -fx-font-weight: bold;
+    -fx-font-size: 20pt;
+    -fx-font-family: 'Impact';
+    -fx-effect: dropshadow(one-pass-box, crimson, 8, 0.0, 2, 0);
+    -fx-transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    -fx-font-size: 22pt; /* Increase font size on hover */
+    -fx-scale-x: 1.1; /* Scale button size on hover */
+    -fx-scale-y: 1.1;
+    -fx-cursor: pointer;
+}
+
+.delete-button {
+    -fx-font-weight: bold;
+    -fx-font-size: 20pt;
+    -fx-font-family: 'Impact';
+    -fx-effect: dropshadow(one-pass-box, magenta, 8, 0.0, 2, 0);
+    -fx-transition: all 0.3s ease;
+}
+
+.delete-button:hover {
+    -fx-font-size: 22pt; /* Increase font size on hover */
+    -fx-scale-x: 1.1; /* Scale button size on hover */
+    -fx-scale-y: 1.1;
+    -fx-cursor: pointer;
+}
+.table-row-cell {
+    -fx-text-fill: white;
+    -fx-background-color: #212121;
+}
+.table-row-cell:selected {
+    -fx-font-weight: bold;
+    -fx-background-color: black;
+}

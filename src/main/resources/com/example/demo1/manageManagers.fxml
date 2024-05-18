@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.effect.DropShadow?>
+
+<?import java.net.URL?>
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ManageManagersController" prefWidth="1000" prefHeight="1000" styleClass="root-pane">
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+    <children>
+        <VBox fx:id="contentVBox" alignment="CENTER" spacing="10" styleClass="vbox-pane" layoutX="50" layoutY="50" prefWidth="900">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <children>
+                <Label text="Manage Managers" styleClass="title-label"/>
+                <TextField fx:id="searchField" promptText="Search Manager by ID" onKeyReleased="#handleSearch" styleClass="search-field"/>
+                <TableView fx:id="managerTableView" styleClass="table-view" prefHeight="240">
+                    <columns>
+                        <TableColumn fx:id="managerIdColumn" text="Manager ID" style="-fx-text-fill: white"/>
+                        <TableColumn fx:id="managerNameColumn" text="Manager Name" style="-fx-text-fill: white"/>
+                        <TableColumn fx:id="managerEmailColumn" text="Manager Email" style="-fx-text-fill: white"/>
+                    </columns>
+                </TableView>
+                <Button onAction="#addManager" styleClass="add-button">
+                    <graphic>
+                        <Text text="Add Manager">
+                            <effect>
+                                <DropShadow color="hotpink" radius="2" offsetX="1" offsetY="1"/>
+                            </effect>
+                        </Text>
+                    </graphic>
+                </Button>
+                <Button onAction="#updateManager" styleClass="update-button">
+                    <graphic>
+                        <Text text="Update Manager">
+                            <effect>
+                                <DropShadow color="aqua" radius="2" offsetX="1" offsetY="1"/>
+                            </effect>
+                        </Text>
+                    </graphic>
+                </Button>
+                <Button onAction="#deleteManager" styleClass="delete-button">
+                    <graphic>
+                        <Text text="Delete Manager">
+                            <effect>
+                                <DropShadow color="crimson" radius="2" offsetX="1" offsetY="1"/>
+                            </effect>
+                        </Text>
+                    </graphic>
+                </Button>
+                <Button onAction="#backToMainMenu" styleClass="back-button">
+                    <graphic>
+                        <Text text="Back to Main Menu">
+                            <effect>
+                                <DropShadow color="mediumpurple" radius="2" offsetX="1" offsetY="1"/>
+                            </effect>
+                        </Text>
+                    </graphic>
+                </Button>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

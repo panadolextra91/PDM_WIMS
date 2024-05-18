@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.effect.DropShadow?>
+
+<?import java.net.URL?>
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ManageOrderItemsController" prefWidth="1000" prefHeight="1000" styleClass="root-pane">
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+    <children>
+        <VBox fx:id="contentVBox" alignment="CENTER" spacing="10" styleClass="vbox-pane" layoutX="50" layoutY="50" prefWidth="900">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <children>
+                <Label text="Manage Order Items" styleClass="title-label"/>
+                <TextField fx:id="searchField" promptText="Search Order Items by ID" onKeyReleased="#handleSearch" styleClass="search-field"/>
+                <TableView fx:id="orderItemTableView" styleClass="table-view" prefHeight="240">
+                    <columns>
+                        <TableColumn fx:id="orderItemIdColumn" text="Order Item ID" style="-fx-text-fill: white"/>
+                        <TableColumn fx:id="orderIdColumn" text="Order ID" style="-fx-text-fill: white"/>
+                        <TableColumn fx:id="productIdColumn" text="Product ID" style="-fx-text-fill: white"/>
+                        <TableColumn fx:id="quantityColumn" text="Quantity" style="-fx-text-fill: white"/>
+                    </columns>
+                </TableView>
+                <Button onAction="#addOrderItem" styleClass="add-button">
+                    <graphic>
+                        <Text text="Add Order Item">
+                            <effect>
+                                <DropShadow color="greenyellow" radius="2" offsetX="1" offsetY="1"/>
+                            </effect>
+                        </Text>
+                    </graphic>
+                </Button>
+                <Button onAction="#updateOrderItem" styleClass="update-button">
+                    <graphic>
+                        <Text text="Update Order Item">
+                            <effect>
+                                <DropShadow color="aqua" radius="2" offsetX="1" offsetY="1"/>
+                            </effect>
+                        </Text>
+                    </graphic>
+                </Button>
+                <Button onAction="#deleteOrderItem" styleClass="delete-button">
+                    <graphic>
+                        <Text text="Delete Order Item">
+                            <effect>
+                                <DropShadow color="magenta" radius="2" offsetX="1" offsetY="1"/>
+                            </effect>
+                        </Text>
+                    </graphic>
+                </Button>
+                <Button onAction="#backToMainMenu" styleClass="back-button">
+                    <graphic>
+                        <Text text="Back to Main Menu">
+                            <effect>
+                                <DropShadow color="crimson" radius="2" offsetX="1" offsetY="1"/>
+                            </effect>
+                        </Text>
+                    </graphic>
+                </Button>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.effect.DropShadow?>
+
+<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.MainMenuController" prefWidth="1000" prefHeight="1000" style="-fx-background-color: #1a1a1a">
+    <children>
+        <Button style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, magenta, 8, 0.0, 2, 0);" mnemonicParsing="false" onAction="#manageOrders">
+            <graphic>
+                <Text text="Manage Orders">
+                    <effect>
+                        <DropShadow color="magenta" radius="2" offsetX="1" offsetY="1"/>
+                    </effect>
+                </Text>
+            </graphic>
+        </Button>
+        <Button style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, aqua, 8, 0.0, 2, 0);" mnemonicParsing="false" onAction="#manageOrderItems">
+            <graphic>
+                <Text text="Manage Order Items">
+                    <effect>
+                        <DropShadow color="aqua" radius="2" offsetX="1" offsetY="1"/>
+                    </effect>
+                </Text>
+            </graphic>
+        </Button>
+        <Button style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, yellowgreen, 8, 0.0, 2, 0);" mnemonicParsing="false" onAction="#manageCustomers">
+            <graphic>
+                <Text text="Manage Customers">
+                    <effect>
+                        <DropShadow color="yellowgreen" radius="2" offsetX="1" offsetY="1"/>
+                    </effect>
+                </Text>
+            </graphic>
+        </Button>
+        <Button style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, orange, 8, 0.0, 2, 0);" mnemonicParsing="false" onAction="#manageProducts">
+            <graphic>
+                <Text text="Manage Products">
+                    <effect>
+                        <DropShadow color="orange" radius="2" offsetX="1" offsetY="1"/>
+                    </effect>
+                </Text>
+            </graphic>
+        </Button>
+        <Button style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, deeppink, 8, 0.0, 2, 0);" mnemonicParsing="false" onAction="#manageManagers">
+            <graphic>
+                <Text text="Manage Managers">
+                    <effect>
+                        <DropShadow color="deeppink" radius="2" offsetX="1" offsetY="1"/>
+                    </effect>
+                </Text>
+            </graphic>
+        </Button>
+        <Button style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, yellow, 8, 0.0, 2, 0);" mnemonicParsing="false" onAction="#manageAreas">
+            <graphic>
+                <Text text="Manage Areas">
+                    <effect>
+                        <DropShadow color="yellow" radius="2" offsetX="1" offsetY="1"/>
+                    </effect>
+                </Text>
+            </graphic>
+        </Button>
+        <Button style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, lightgreen, 8, 0.0, 2, 0);" mnemonicParsing="false" onAction="#showAnalytics">
+            <graphic>
+                <Text text="Show Analytics">
+                    <effect>
+                        <DropShadow color="lightgreen" radius="2" offsetX="1" offsetY="1"/>
+                    </effect>
+                </Text>
+            </graphic>
+        </Button>
+        <Button style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, red, 8, 0.0, 2, 0);" mnemonicParsing="false" onAction="#exitApplication">
+            <graphic>
+                <Text text="Exit">
+                    <effect>
+                        <DropShadow color="red" radius="2" offsetX="1" offsetY="1"/>
+                    </effect>
+                </Text>
+            </graphic>
+        </Button>
+    </children>
+</VBox>

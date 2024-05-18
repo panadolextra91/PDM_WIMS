@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.effect.DropShadow?>
+
+<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" styleClass="sidebar">
+    <children>
+        <Button onAction="#manageOrders" styleClass="sidebar-button">
+            <graphic>
+                <Text text="Manage Orders">
+                    <effect>
+                        <DropShadow color="magenta" radius="2" offsetX="1" offsetY="1"/>
+                    </effect>
+                </Text>
+            </graphic>
+        </Button>
+        <Button onAction="#manageOrderItems" styleClass="sidebar-button">
+            <graphic>
+                <Text text="Manage Order Items">
+                    <effect>
+                        <DropShadow color="aqua" radius="2" offsetX="1" offsetY="1"/>
+                    </effect>
+                </Text>
+            </graphic>
+        </Button>
+        <Button onAction="#manageCustomers" styleClass="sidebar-button">
+            <graphic>
+                <Text text="Manage Customers">
+                    <effect>
+                        <DropShadow color="yellowgreen" radius="2" offsetX="1" offsetY="1"/>
+                    </effect>
+                </Text>
+            </graphic>
+        </Button>
+        <Button onAction="#manageProducts" styleClass="sidebar-button">
+            <graphic>
+                <Text text="Manage Products">
+                    <effect>
+                        <DropShadow color="orange" radius="2" offsetX="1" offsetY="1"/>
+                    </effect>
+                </Text>
+            </graphic>
+        </Button>
+        <Button onAction="#manageManagers" styleClass="sidebar-button">
+            <graphic>
+                <Text text="Manage Managers">
+                    <effect>
+                        <DropShadow color="deeppink" radius="2" offsetX="1" offsetY="1"/>
+                    </effect>
+                </Text>
+            </graphic>
+        </Button>
+        <Button onAction="#manageAreas" styleClass="sidebar-button">
+            <graphic>
+                <Text text="Manage Areas">
+                    <effect>
+                        <DropShadow color="yellow" radius="2" offsetX="1" offsetY="1"/>
+                    </effect>
+                </Text>
+            </graphic>
+        </Button>
+    </children>
+</VBox>
