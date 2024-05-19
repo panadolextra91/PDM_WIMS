@@ -68,24 +68,27 @@ public class ManageAreasController {
 
     @FXML
     private void addArea(ActionEvent event) throws IOException {
-        navigateTo(event, "addArea.fxml");
+        MainController.loadScene("addArea.fxml");
     }
 
     @FXML
-    private void updateArea(ActionEvent event) throws IOException {
+    private void updateArea(ActionEvent event) {
         Area selectedArea = areaTableView.getSelectionModel().getSelectedItem();
         if (selectedArea != null) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("updateArea.fxml"));
-            Parent root = loader.load();
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("updateArea.fxml"));
+                Parent root = loader.load();
 
-            UpdateAreaController updateAreaController = loader.getController();
-            updateAreaController.setArea(selectedArea);
+                UpdateAreaController updateAreaController = loader.getController();
+                updateAreaController.setArea(selectedArea);
 
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
+                MainController.setScene(new Scene(root));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
+
 
     @FXML
     private void deleteArea(ActionEvent event) {
@@ -102,14 +105,6 @@ public class ManageAreasController {
 
     @FXML
     private void backToMainMenu(ActionEvent event) throws IOException {
-        navigateTo(event, "mainMenu.fxml");
-    }
-
-    private void navigateTo(ActionEvent event, String fxmlFile) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+        MainController.loadScene("mainMenu.fxml");
     }
 }

@@ -1,41 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.UpdateProductController" prefWidth="1000" prefHeight="1000" style="-fx-background-color: #1a1a1a">
+<AnchorPane prefHeight="1000" prefWidth="1000" style="-fx-background-color: #1a1a1a" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.UpdateProductController">
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
     <children>
-        <Label text="Product ID:" layoutX="200" layoutY="250" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';"/>
-        <TextField fx:id="productIdField" layoutX="400" layoutY="250" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;"/>
+        <Label layoutX="200" layoutY="250" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Product ID:" />
+        <TextField fx:id="productIdField" layoutX="400" layoutY="250" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
 
-        <Label text="Name:" layoutX="200" layoutY="300" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';"/>
-        <TextField fx:id="nameField" layoutX="400" layoutY="300" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;"/>
+        <Label layoutX="200" layoutY="300" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Name:" />
+        <TextField fx:id="nameField" layoutX="400" layoutY="300" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
 
-        <Label text="Price:" layoutX="200" layoutY="350" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';"/>
-        <TextField fx:id="priceField" layoutX="400" layoutY="350" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;"/>
+        <Label layoutX="200" layoutY="350" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Price:" />
+        <TextField fx:id="priceField" layoutX="400" layoutY="350" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
 
-        <Label text="Quantity:" layoutX="200" layoutY="400" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';"/>
-        <TextField fx:id="quantityField" layoutX="400" layoutY="400" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;"/>
+        <Label layoutX="200" layoutY="400" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Quantity:" />
+        <TextField fx:id="quantityField" layoutX="400" layoutY="400" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
 
-        <Button layoutX="400" layoutY="500" style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, magenta, 8, 0.0, 2, 0);" onAction="#handleUpdateProduct">
+        <Button layoutX="400" layoutY="500" onAction="#handleUpdateProduct" styleClass="update-button">
             <graphic>
-                <Text text="Update">
+                <Text styleClass="button-text" text="Update">
                     <effect>
-                        <DropShadow color="magenta" radius="2" offsetX="1" offsetY="1"/>
+                        <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                     <color>
+                        <Color green="1.0" blue="1.0" />
+                     </color></DropShadow>
                     </effect>
                 </Text>
             </graphic>
         </Button>
 
-        <Button layoutX="600" layoutY="500" style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, aqua, 8, 0.0, 2, 0);" onAction="#handleCancel">
+        <Button layoutX="600" layoutY="500" onAction="#handleCancel" styleClass="back-button">
             <graphic>
-                <Text text="Cancel">
+                <Text styleClass="button-text" text="Cancel">
                     <effect>
-                        <DropShadow color="aqua" radius="2" offsetX="1" offsetY="1"/>
+                        <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                     <color>
+                        <Color red="0.8627451062202454" green="0.0784313753247261" blue="0.23529411852359772" />
+                     </color></DropShadow>
                     </effect>
                 </Text>
             </graphic>

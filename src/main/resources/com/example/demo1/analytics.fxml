@@ -11,14 +11,18 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.effect.DropShadow?>
 
+<?import java.net.URL?>
 <VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.AnalyticsController" spacing="10" prefWidth="1000" prefHeight="1000" style="-fx-background-color: #1a1a1a">
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
     <padding>
         <Insets top="10" right="10" bottom="10" left="10"/>
     </padding>
     <children>
-        <Button style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, mediumpurple, 8, 0.0, 2, 0);" onAction="#backToMainMenu">
+        <Button onAction="#backToMainMenu" styleClass="back-button">
             <graphic>
-                <Text text="Back to Main Menu">
+                <Text text="Back to Main Menu" styleClass="button-text">
                     <effect>
                         <DropShadow color="mediumpurple" radius="2" offsetX="1" offsetY="1"/>
                     </effect>

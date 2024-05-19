@@ -1,3 +1,4 @@
+
 .root-pane {
     -fx-background-color: #1a1a1a;
 }
@@ -7,11 +8,10 @@
 }
 
 .title-label {
-    -fx-text-fill: white;
-    -fx-font-size: 30pt;
+    /*-fx-text-fill: white;*/
+    -fx-font-size: 50pt;
     -fx-font-weight: bold;
     -fx-font-family: 'Impact';
-    -fx-effect: dropshadow(one-pass-box, hotpink, 8, 0.0, 2, 0);
 }
 
 .search-field {
@@ -19,7 +19,14 @@
     -fx-text-fill: white;
     -fx-font-size: 15pt;
     -fx-background-radius: 10; /* Add background radius */
-    -fx-border-color: white; /* Add border color */
+    -fx-border-color: #212121;
+    -fx-border-width: 0.25; /* Add border width */
+    -fx-border-radius: 10; /* Add border radius */
+}
+
+.search-field:focused {
+    -fx-background-radius: 10; /* Add background radius */
+    -fx-border-color: hotpink;
     -fx-border-width: 0.5; /* Add border width */
     -fx-border-radius: 10; /* Add border radius */
 }
@@ -29,16 +36,26 @@
     -fx-text-fill: white;
 }
 
+.table-view .scroll-bar {
+    -fx-background-color: #212121;
+    -fx-thumb-color: #343434;
+}
+
 .add-button {
     -fx-font-weight: bold;
-    -fx-font-size: 20pt;
+    -fx-font-size: 17pt;
     -fx-font-family: 'Impact';
-    -fx-effect: dropshadow(one-pass-box, greenyellow, 8, 0.0, 2, 0);
+    -fx-effect: dropshadow(gaussian, greenyellow, 20, 0.5, 0, 0);
     -fx-transition: all 0.3s ease;
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-background-radius: 15; /* Add background radius */
+    -fx-border-width: 0.5; /* Add border width */
+    -fx-border-radius: 15; /* Add border radius */
 }
 
 .add-button:hover {
-    -fx-font-size: 22pt; /* Increase font size on hover */
+    -fx-font-size: 19pt; /* Increase font size on hover */
     -fx-scale-x: 1.1; /* Scale button size on hover */
     -fx-scale-y: 1.1;
     -fx-cursor: pointer;
@@ -46,29 +63,41 @@
 
 .update-button {
     -fx-font-weight: bold;
-    -fx-font-size: 20pt;
+    -fx-font-size: 17pt;
     -fx-font-family: 'Impact';
-    -fx-effect: dropshadow(one-pass-box, aqua, 8, 0.0, 2, 0);
+    -fx-effect: dropshadow(gaussian, aqua, 20, 0.5, 0, 0);
     -fx-transition: all 0.3s ease;
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-background-radius: 15; /* Add background radius */
+    -fx-border-width: 0.5; /* Add border width */
+    -fx-border-radius: 15; /* Add border radius */
 }
 
 .update-button:hover {
-    -fx-font-size: 22pt; /* Increase font size on hover */
+    -fx-font-size: 19pt; /* Increase font size on hover */
     -fx-scale-x: 1.1; /* Scale button size on hover */
     -fx-scale-y: 1.1;
     -fx-cursor: pointer;
+
+
 }
 
 .back-button {
     -fx-font-weight: bold;
-    -fx-font-size: 20pt;
+    -fx-font-size: 17pt;
     -fx-font-family: 'Impact';
-    -fx-effect: dropshadow(one-pass-box, crimson, 8, 0.0, 2, 0);
+    -fx-effect: dropshadow(gaussian, crimson, 20, 0.5, 0, 0);
     -fx-transition: all 0.3s ease;
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-background-radius: 15; /* Add background radius */
+    -fx-border-width: 0.5; /* Add border width */
+    -fx-border-radius: 15; /* Add border radius */
 }
 
 .back-button:hover {
-    -fx-font-size: 22pt; /* Increase font size on hover */
+    -fx-font-size: 19pt; /* Increase font size on hover */
     -fx-scale-x: 1.1; /* Scale button size on hover */
     -fx-scale-y: 1.1;
     -fx-cursor: pointer;
@@ -76,23 +105,45 @@
 
 .delete-button {
     -fx-font-weight: bold;
-    -fx-font-size: 20pt;
+    -fx-font-size: 17pt;
     -fx-font-family: 'Impact';
-    -fx-effect: dropshadow(one-pass-box, magenta, 8, 0.0, 2, 0);
+    -fx-effect: dropshadow(gaussian, magenta, 20, 0.5, 0, 0);
     -fx-transition: all 0.3s ease;
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-background-radius: 15; /* Add background radius */
+    -fx-border-width: 0.5; /* Add border width */
+    -fx-border-radius: 15; /* Add border radius */
 }
 
 .delete-button:hover {
-    -fx-font-size: 22pt; /* Increase font size on hover */
+    -fx-font-size: 19pt; /* Increase font size on hover */
     -fx-scale-x: 1.1; /* Scale button size on hover */
     -fx-scale-y: 1.1;
     -fx-cursor: pointer;
 }
+
 .table-row-cell {
     -fx-text-fill: white;
     -fx-background-color: #212121;
 }
+
 .table-row-cell:selected {
     -fx-font-weight: bold;
     -fx-background-color: black;
 }
+
+.manage-button {
+    -fx-background-radius: 15; /* Add background radius */
+    -fx-border-width: 0.5; /* Add border width */
+    -fx-border-radius: 15; /* Add border radius */
+}
+
+.manage-button:hover {
+    -fx-font-size: 26pt; /* Increase font size on hover */
+    -fx-scale-x: 1.1; /* Scale button size on hover */
+    -fx-scale-y: 1.1;
+    -fx-cursor: pointer;
+}
+
+

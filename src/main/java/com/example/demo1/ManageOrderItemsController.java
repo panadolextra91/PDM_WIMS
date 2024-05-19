@@ -68,22 +68,24 @@ public class ManageOrderItemsController {
 
     @FXML
     private void addOrderItem(ActionEvent event) throws IOException {
-        navigateTo(event, "addOrderItem.fxml");
+        MainController.loadScene("addOrderItem.fxml");
     }
 
     @FXML
-    private void updateOrderItem(ActionEvent event) throws IOException {
+    private void updateOrderItem(ActionEvent event) {
         OrderItem selectedOrderItem = orderItemTableView.getSelectionModel().getSelectedItem();
         if (selectedOrderItem != null) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("updateOrderItem.fxml"));
-            Parent root = loader.load();
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("updateOrderItem.fxml"));
+                Parent root = loader.load();
 
-            UpdateOrderItemController updateOrderItemController = loader.getController();
-            updateOrderItemController.setOrderItem(selectedOrderItem);
+                UpdateOrderItemController updateOrderItemController = loader.getController();
+                updateOrderItemController.setOrderItem(selectedOrderItem);
 
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
+                MainController.setScene(new Scene(root));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -102,14 +104,6 @@ public class ManageOrderItemsController {
 
     @FXML
     private void backToMainMenu(ActionEvent event) throws IOException {
-        navigateTo(event, "mainMenu.fxml");
-    }
-
-    private void navigateTo(ActionEvent event, String fxmlFile) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+        MainController.loadScene("mainMenu.fxml");
     }
 }

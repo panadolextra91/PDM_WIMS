@@ -41,7 +41,23 @@ public class ProductDAO {
             return null;
         }
     }
-
+    public Product getProductByName(String name) throws SQLException {
+        String query = "SELECT * FROM products WHERE name = ?";
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, name);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return new Product(
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getDouble("price"),
+                        resultSet.getInt("quantity")
+                );
+            }
+            return null;
+        }
+    }
     public List<Product> getAllProducts() throws SQLException {
         List<Product> products = new ArrayList<>();
         String query = "SELECT * FROM products";
@@ -77,6 +93,16 @@ public class ProductDAO {
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, id);
+            statement.executeUpdate();
+        }
+    }
+
+    public void decreaseProductStock(int productId, int quantity) throws SQLException {
+        String query = "UPDATE products SET quantity = quantity - ? WHERE id = ?";
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, quantity);
+            statement.setInt(2, productId);
             statement.executeUpdate();
         }
     }

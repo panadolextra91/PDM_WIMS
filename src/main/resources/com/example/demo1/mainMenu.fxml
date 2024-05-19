@@ -1,84 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.effect.DropShadow?>
 
-<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.MainMenuController" prefWidth="1000" prefHeight="1000" style="-fx-background-color: #1a1a1a">
+<VBox alignment="CENTER" prefHeight="950.0" prefWidth="950.0" spacing="25.0" style="-fx-background-color: #1a1a1a" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.MainMenuController">
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
     <children>
-        <Button style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, magenta, 8, 0.0, 2, 0);" mnemonicParsing="false" onAction="#manageOrders">
+        <Button mnemonicParsing="false" onAction="#manageOrders" style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(gaussian, magenta, 20, 0.5, 0, 0); -fx-background-color: black;" styleClass="manage-button">
             <graphic>
-                <Text text="Manage Orders">
+                <Text fill="WHITE" text="Manage Orders">
                     <effect>
-                        <DropShadow color="magenta" radius="2" offsetX="1" offsetY="1"/>
+                        <DropShadow color="magenta" offsetX="1" offsetY="1" radius="2" />
                     </effect>
                 </Text>
             </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
-        <Button style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, aqua, 8, 0.0, 2, 0);" mnemonicParsing="false" onAction="#manageOrderItems">
+        <Button mnemonicParsing="false" onAction="#manageOrderItems" style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(gaussian, aqua, 20, 0.5, 0, 0); -fx-background-color: black;" styleClass="manage-button">
             <graphic>
-                <Text text="Manage Order Items">
+                <Text fill="WHITE" text="Manage Order Items">
                     <effect>
-                        <DropShadow color="aqua" radius="2" offsetX="1" offsetY="1"/>
+                        <DropShadow color="aqua" offsetX="1" offsetY="1" radius="2" />
                     </effect>
                 </Text>
             </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
-        <Button style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, yellowgreen, 8, 0.0, 2, 0);" mnemonicParsing="false" onAction="#manageCustomers">
+        <Button mnemonicParsing="false" onAction="#manageCustomers" style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(gaussian, greenyellow, 20, 0.5, 0, 0); -fx-background-color: black;" styleClass="manage-button">
             <graphic>
-                <Text text="Manage Customers">
+                <Text fill="WHITE" text="Manage Customers">
                     <effect>
-                        <DropShadow color="yellowgreen" radius="2" offsetX="1" offsetY="1"/>
+                        <DropShadow color="yellowgreen" offsetX="1" offsetY="1" radius="2" />
                     </effect>
                 </Text>
             </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
-        <Button style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, orange, 8, 0.0, 2, 0);" mnemonicParsing="false" onAction="#manageProducts">
+        <Button mnemonicParsing="false" onAction="#manageProducts" style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(gaussian, orange, 20, 0.5, 0, 0); -fx-background-color: black;" styleClass="manage-button">
             <graphic>
-                <Text text="Manage Products">
+                <Text fill="WHITE" text="Manage Products">
                     <effect>
-                        <DropShadow color="orange" radius="2" offsetX="1" offsetY="1"/>
+                        <DropShadow color="orange" offsetX="1" offsetY="1" radius="2" />
                     </effect>
                 </Text>
             </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
-        <Button style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, deeppink, 8, 0.0, 2, 0);" mnemonicParsing="false" onAction="#manageManagers">
+        <Button mnemonicParsing="false" onAction="#manageManagers" style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(gaussian, hotpink, 20, 0.5, 0, 0); -fx-background-color: black;" styleClass="manage-button">
             <graphic>
-                <Text text="Manage Managers">
+                <Text fill="WHITE" text="Manage Managers">
                     <effect>
-                        <DropShadow color="deeppink" radius="2" offsetX="1" offsetY="1"/>
+                        <DropShadow color="deeppink" offsetX="1" offsetY="1" radius="2" />
                     </effect>
                 </Text>
             </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
-        <Button style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, yellow, 8, 0.0, 2, 0);" mnemonicParsing="false" onAction="#manageAreas">
+        <Button mnemonicParsing="false" onAction="#manageAreas" style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(gaussian, yellow, 20, 0.5, 0, 0); -fx-background-color: black;" styleClass="manage-button">
             <graphic>
-                <Text text="Manage Areas">
+                <Text fill="WHITE" text="Manage Areas">
                     <effect>
-                        <DropShadow color="yellow" radius="2" offsetX="1" offsetY="1"/>
+                        <DropShadow color="yellow" offsetX="1" offsetY="1" radius="2" />
                     </effect>
                 </Text>
             </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
-        <Button style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, lightgreen, 8, 0.0, 2, 0);" mnemonicParsing="false" onAction="#showAnalytics">
+        <Button mnemonicParsing="false" onAction="#showAnalytics" style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(gaussian, lightgreen, 20, 0.5, 0, 0); -fx-background-color: black;" styleClass="manage-button">
             <graphic>
-                <Text text="Show Analytics">
+                <Text fill="WHITE" text="Show Analytics">
                     <effect>
-                        <DropShadow color="lightgreen" radius="2" offsetX="1" offsetY="1"/>
+                        <DropShadow color="lightgreen" offsetX="1" offsetY="1" radius="2" />
                     </effect>
                 </Text>
             </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
-        <Button style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(one-pass-box, red, 8, 0.0, 2, 0);" mnemonicParsing="false" onAction="#exitApplication">
+        <Button mnemonicParsing="false" onAction="#exitApplication" style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(gaussian, red, 20, 0.5, 0, 0); -fx-background-color: black;" styleClass="manage-button">
             <graphic>
-                <Text text="Exit">
+                <Text fill="WHITE" text="Exit">
                     <effect>
-                        <DropShadow color="red" radius="2" offsetX="1" offsetY="1"/>
+                        <DropShadow color="red" offsetX="1" offsetY="1" radius="2" />
                     </effect>
                 </Text>
             </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
     </children>
 </VBox>

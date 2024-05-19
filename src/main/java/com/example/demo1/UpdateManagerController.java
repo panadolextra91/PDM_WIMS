@@ -50,14 +50,6 @@ public class UpdateManagerController {
 
     @FXML
     private void handleCancel(ActionEvent event) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("manageManagers.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        MainController.loadScene("manageManagers.fxml");
     }
 }

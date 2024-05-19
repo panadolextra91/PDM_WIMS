@@ -3,14 +3,12 @@ package com.example.demo1;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -68,23 +66,25 @@ public class ManageOrdersController {
     }
 
     @FXML
-    private void addOrder(ActionEvent event) throws IOException {
-        navigateTo(event, "addOrder.fxml");
+    private void addOrder(ActionEvent event) {
+        MainController.loadScene("addOrder.fxml");
     }
 
     @FXML
-    private void updateOrder(ActionEvent event) throws IOException {
+    private void updateOrder(ActionEvent event) {
         Order selectedOrder = orderTableView.getSelectionModel().getSelectedItem();
         if (selectedOrder != null) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("updateOrder.fxml"));
-            Parent root = loader.load();
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("updateOrder.fxml"));
+                Parent root = loader.load();
 
-            UpdateOrderController updateOrderController = loader.getController();
-            updateOrderController.setOrder(selectedOrder);
+                UpdateOrderController updateOrderController = loader.getController();
+                updateOrderController.setOrder(selectedOrder);
 
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
+                MainController.setScene(new Scene(root));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -102,32 +102,26 @@ public class ManageOrdersController {
     }
 
     @FXML
-    private void addOrderItem(ActionEvent event) throws IOException {
+    private void addOrderItem(ActionEvent event) {
         Order selectedOrder = orderTableView.getSelectionModel().getSelectedItem();
         if (selectedOrder != null) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("addOrderItem.fxml"));
-            Parent root = loader.load();
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("addOrderItem.fxml"));
+                Parent root = loader.load();
 
-            AddOrderItemController addOrderItemController = loader.getController();
-            addOrderItemController.setOrderId(selectedOrder.getId());
+                AddOrderItemController addOrderItemController = loader.getController();
+                addOrderItemController.setOrderId(selectedOrder.getId());
 
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
-            loadOrders(); // Reload orders to update the total price
+                MainController.setScene(new Scene(root));
+                loadOrders(); // Reload orders to update the total price
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     @FXML
-    private void backToMainMenu(ActionEvent event) throws IOException {
-        navigateTo(event, "mainMenu.fxml");
-    }
-
-    private void navigateTo(ActionEvent event, String fxmlFile) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+    private void backToMainMenu(ActionEvent event) {
+        MainController.loadScene("mainMenu.fxml");
     }
 }
