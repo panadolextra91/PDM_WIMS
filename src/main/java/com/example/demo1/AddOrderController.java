@@ -21,6 +21,11 @@ public class AddOrderController {
 
     private OrderDAO orderDAO = new OrderDAO();
 
+    public void setCustomerId(int customerId) {
+        customerIdField.setText(String.valueOf(customerId));
+        customerIdField.setDisable(true); // Disable the field to prevent modification
+    }
+
     @FXML
     private void handleAddOrder(ActionEvent event) {
         try {

@@ -13,6 +13,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Text?>
 
+<?import com.jfoenix.skins.JFXTabPaneSkin.TabContentHolder?>
 <AnchorPane prefHeight="1000" prefWidth="1000" styleClass="root-pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ManageCustomersController">
     <stylesheets>
         <URL value="@styles.css" />
@@ -71,6 +72,18 @@
                            <color>
                               <Color red="1.0" blue="1.0" />
                            </color></DropShadow>
+                            </effect>
+                        </Text>
+                    </graphic>
+                </Button>
+                <Button onAction="#addOrderForCustomer" style="-fx-effect: dropshadow(gaussian, orange, 20, 0.5, 0, 0);" styleClass="add-button">
+                    <graphic>
+                        <Text styleClass="button-text" text="Add Order">
+                            <effect>
+                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                    <color>
+                                        <Color red="1.0" green="0.6470588445663452" />
+                                    </color></DropShadow>
                             </effect>
                         </Text>
                     </graphic>

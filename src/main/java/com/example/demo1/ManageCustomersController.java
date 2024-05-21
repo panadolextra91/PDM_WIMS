@@ -5,14 +5,12 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -89,7 +87,6 @@ public class ManageCustomersController {
         }
     }
 
-
     @FXML
     private void deleteCustomer(ActionEvent event) {
         Customer selectedCustomer = customerTableView.getSelectionModel().getSelectedItem();
@@ -98,6 +95,25 @@ public class ManageCustomersController {
                 customerDAO.deleteCustomer(selectedCustomer.getId());
                 loadCustomers();
             } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @FXML
+    private void addOrderForCustomer(ActionEvent event) {
+        Customer selectedCustomer = customerTableView.getSelectionModel().getSelectedItem();
+        if (selectedCustomer != null) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("addOrder.fxml"));
+                Parent root = loader.load();
+
+                AddOrderController addOrderController = loader.getController();
+                addOrderController.setCustomerId(selectedCustomer.getId());
+
+                Scene scene = new Scene(root);
+                MainController.setScene(scene);
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }

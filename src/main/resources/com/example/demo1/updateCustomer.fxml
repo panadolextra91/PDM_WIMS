@@ -23,7 +23,7 @@
         <Label layoutX="200" layoutY="350" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Email:" />
         <TextField fx:id="emailField" layoutX="400" layoutY="350" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
 
-        <Button layoutX="400" layoutY="450" onAction="#handleUpdateCustomer" styleClass="update-button">
+        <Button layoutX="400.0" layoutY="500.0" onAction="#handleUpdateCustomer" styleClass="update-button">
             <graphic>
                 <Text styleClass="button-text" text="Update">
                     <effect>
@@ -36,7 +36,7 @@
             </graphic>
         </Button>
 
-        <Button layoutX="600" layoutY="450" onAction="#handleCancel" styleClass="back-button">
+        <Button layoutX="600.0" layoutY="500.0" onAction="#handleCancel" styleClass="back-button">
             <graphic>
                 <Text styleClass="button-text" text="Cancel">
                     <effect>
@@ -48,5 +48,6 @@
                 </Text>
             </graphic>
         </Button>
+      <TextField fx:id="phoneField1" layoutX="400.0" layoutY="401.0" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
     </children>
 </AnchorPane>

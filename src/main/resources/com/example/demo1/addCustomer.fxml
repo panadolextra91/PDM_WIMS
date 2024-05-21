@@ -22,9 +22,6 @@
         <Label layoutX="200" layoutY="350" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Email:" />
         <TextField fx:id="emailField" layoutX="400" layoutY="350" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white;  -fx-font-size: 15pt;" />
 
-        <Label layoutX="200" layoutY="400" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Phone:" />
-        <TextField fx:id="phoneField" layoutX="400" layoutY="400" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white;  -fx-font-size: 15pt;" />
-
         <Button layoutX="400" layoutY="480" onAction="#handleAddCustomer" styleClass="add-button">
             <graphic>
                 <Text styleClass="button-text" text="Add">
