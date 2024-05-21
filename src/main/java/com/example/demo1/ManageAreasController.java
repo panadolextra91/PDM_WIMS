@@ -32,6 +32,29 @@ public class ManageAreasController {
     private TableColumn<Area, Integer> managerIdColumn;
 
     private AreaDAO areaDAO = new AreaDAO();
+    public void manageOrders(ActionEvent event) throws IOException {
+        MainController.loadScene("manageOrders.fxml");
+    }
+
+    public void manageOrderItems(ActionEvent event) throws IOException {
+        MainController.loadScene("manageOrderItems.fxml");
+    }
+
+    public void manageCustomers(ActionEvent event) throws IOException {
+        MainController.loadScene("manageCustomers.fxml");
+    }
+
+    public void manageProducts(ActionEvent event) throws IOException {
+        MainController.loadScene("manageProducts.fxml");
+    }
+
+    public void manageManagers(ActionEvent event) throws IOException {
+        MainController.loadScene("manageManagers.fxml");
+    }
+
+    public void manageAreas(ActionEvent event) throws IOException {
+        MainController.loadScene("manageAreas.fxml");
+    }
 
     @FXML
     public void initialize() {

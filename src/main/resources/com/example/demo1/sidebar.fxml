@@ -1,65 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.effect.DropShadow?>
 
-<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" styleClass="sidebar" fx:controller="com.example.demo1.SidebarController">
+<VBox alignment="CENTER" spacing="20.0" styleClass="sidebar" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.SidebarController">
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
     <children>
-        <Button onAction="#manageOrders" styleClass="sidebar-button">
+        <JFXButton onAction="#manageOrders" ripplerFill="MAGENTA" styleClass="sidebar-button" text="">
             <graphic>
                 <Text text="Manage Orders">
                     <effect>
-                        <DropShadow color="magenta" radius="2" offsetX="1" offsetY="1"/>
+                        <DropShadow color="magenta" offsetX="2" offsetY="2" radius="5" />
                     </effect>
                 </Text>
             </graphic>
-        </Button>
-        <Button onAction="#manageOrderItems" styleClass="sidebar-button">
+        </JFXButton>
+        <JFXButton onAction="#manageOrderItems" ripplerFill="AQUA" styleClass="sidebar-button" text="">
             <graphic>
                 <Text text="Manage Order Items">
                     <effect>
-                        <DropShadow color="aqua" radius="2" offsetX="1" offsetY="1"/>
+                        <DropShadow color="aqua" offsetX="2" offsetY="2" radius="5" />
                     </effect>
                 </Text>
             </graphic>
-        </Button>
-        <Button onAction="#manageCustomers" styleClass="sidebar-button">
+        </JFXButton>
+        <JFXButton onAction="#manageCustomers" ripplerFill="GREENYELLOW" styleClass="sidebar-button" text="">
             <graphic>
                 <Text text="Manage Customers">
                     <effect>
-                        <DropShadow color="yellowgreen" radius="2" offsetX="1" offsetY="1"/>
+                        <DropShadow color="yellowgreen" offsetX="2" offsetY="2" radius="5" />
                     </effect>
                 </Text>
             </graphic>
-        </Button>
-        <Button onAction="#manageProducts" styleClass="sidebar-button">
+        </JFXButton>
+        <JFXButton onAction="#manageProducts" ripplerFill="ORANGE" styleClass="sidebar-button" text="">
             <graphic>
                 <Text text="Manage Products">
                     <effect>
-                        <DropShadow color="orange" radius="2" offsetX="1" offsetY="1"/>
+                        <DropShadow color="orange" offsetX="2" offsetY="2" radius="5" />
                     </effect>
                 </Text>
             </graphic>
-        </Button>
-        <Button onAction="#manageManagers" styleClass="sidebar-button">
+        </JFXButton>
+        <JFXButton onAction="#manageManagers" ripplerFill="DEEPPINK" styleClass="sidebar-button" text="">
             <graphic>
                 <Text text="Manage Managers">
                     <effect>
-                        <DropShadow color="deeppink" radius="2" offsetX="1" offsetY="1"/>
+                        <DropShadow color="deeppink" offsetX="2" offsetY="2" radius="5" />
                     </effect>
                 </Text>
             </graphic>
-        </Button>
-        <Button onAction="#manageAreas" styleClass="sidebar-button">
+        </JFXButton>
+        <JFXButton onAction="#manageAreas" ripplerFill="YELLOW" styleClass="sidebar-button" text="">
             <graphic>
                 <Text text="Manage Areas">
                     <effect>
-                        <DropShadow color="yellow" radius="2" offsetX="1" offsetY="1"/>
+                        <DropShadow color="yellow" offsetX="2" offsetY="2" radius="5" />
                     </effect>
                 </Text>
             </graphic>
-        </Button>
+        </JFXButton>
     </children>
 </VBox>

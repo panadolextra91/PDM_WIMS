@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -9,98 +10,177 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="1000" prefWidth="1000" styleClass="root-pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ManageOrdersController">
+<HBox prefHeight="1000" prefWidth="1600" styleClass="root-pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.ManageOrdersController">
     <stylesheets>
         <URL value="@styles.css" />
     </stylesheets>
     <children>
-        <VBox fx:id="contentVBox" alignment="CENTER" layoutX="50" layoutY="50" prefHeight="696.0" prefWidth="900" spacing="20.0" styleClass="vbox-pane">
-            <padding>
-                <Insets bottom="10" left="10" right="10" top="10" />
-            </padding>
+        <!-- Sidebar wrapped in an AnchorPane for fixed positioning -->
+        <AnchorPane prefHeight="1000" prefWidth="300">
             <children>
-                <Label style="-fx-text-fill: black" styleClass="title-label" text="MANAGE ORDERS">
-               <effect>
-                  <DropShadow blurType="GAUSSIAN" height="15.0" radius="7.0" spread="0.65" width="15.0">
-                     <color>
-                        <Color red="1.0" green="0.4117647111415863" blue="0.7058823704719543" />
-                     </color>
-                  </DropShadow>
-               </effect></Label>
-                <TextField fx:id="searchField" onKeyReleased="#handleSearch" promptText="Search Order by ID" styleClass="search-field" />
-                <TableView fx:id="orderTableView" prefHeight="240" styleClass="table-view">
-                    <columns>
-                        <TableColumn fx:id="orderIdColumn" style="-fx-text-fill: white" text="Order ID" />
-                        <TableColumn fx:id="customerIdColumn" style="-fx-text-fill: white" text="Customer ID" />
-                        <TableColumn fx:id="orderDateColumn" style="-fx-text-fill: white" text="Order Date" />
-                        <TableColumn fx:id="totalPriceColumn" style="-fx-text-fill: white" text="Total Price" />
-                    </columns>
-                </TableView>
-                <Button onAction="#addOrder" styleClass="add-button">
-                    <graphic>
-                        <Text styleClass="button-text" text="Add Order">
-                            <effect>
-                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
-                           <color>
-                              <Color red="0.6784313917160034" green="1.0" blue="0.18431372940540314" />
-                           </color></DropShadow>
-                            </effect>
-                        </Text>
-                    </graphic>
-                </Button>
-                <Button onAction="#deleteOrder" styleClass="delete-button">
-                    <graphic>
-                        <Text styleClass="button-text" text="Delete Order">
-                            <effect>
-                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
-                           <color>
-                              <Color red="1.0" blue="1.0" />
-                           </color></DropShadow>
-                            </effect>
-                        </Text>
-                    </graphic>
-                </Button>
-                <Button onAction="#updateOrder" styleClass="update-button">
-                    <graphic>
-                        <Text styleClass="button-text" text="Update Order">
-                            <effect>
-                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
-                           <color>
-                              <Color green="1.0" blue="1.0" />
-                           </color></DropShadow>
-                            </effect>
-                        </Text>
-                    </graphic>
-                </Button>
-                <Button onAction="#addOrderItem" style="-fx-effect: dropshadow(gaussian, orange, 20, 0.5, 0, 0);" styleClass="add-button">
-                    <graphic>
-                        <Text styleClass="button-text" text="Add Order Item">
-                            <effect>
-                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
-                           <color>
-                              <Color red="1.0" green="0.6470588445663452" />
-                           </color></DropShadow>
-                            </effect>
-                        </Text>
-                    </graphic>
-                </Button>
-                <Button onAction="#backToMainMenu" styleClass="back-button">
-                    <graphic>
-                        <Text styleClass="button-text" text="Back to Main Menu">
-                            <effect>
-                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
-                           <color>
-                              <Color red="0.8627451062202454" green="0.0784313753247261" blue="0.23529411852359772" />
-                           </color></DropShadow>
-                            </effect>
-                        </Text>
-                    </graphic>
-                </Button>
+                <VBox alignment="CENTER" prefHeight="790.0" prefWidth="300" spacing="20.0" styleClass="sidebar">
+                    <stylesheets>
+                        <URL value="@styles.css" />
+                    </stylesheets>
+                    <children>
+                        <JFXButton onAction="#manageOrders" styleClass="sidebar-button" text="">
+                            <graphic>
+                                <Text text="Manage Orders">
+                                    <effect>
+                                        <DropShadow color="magenta" offsetX="2" offsetY="2" radius="5" />
+                                    </effect>
+                                </Text>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton onAction="#manageOrderItems" styleClass="sidebar-button" text="">
+                            <graphic>
+                                <Text text="Manage Order Items">
+                                    <effect>
+                                        <DropShadow color="aqua" offsetX="2" offsetY="2" radius="5" />
+                                    </effect>
+                                </Text>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton onAction="#manageCustomers" styleClass="sidebar-button" text="">
+                            <graphic>
+                                <Text text="Manage Customers">
+                                    <effect>
+                                        <DropShadow color="yellowgreen" offsetX="2" offsetY="2" radius="5" />
+                                    </effect>
+                                </Text>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton onAction="#manageProducts" styleClass="sidebar-button" text="">
+                            <graphic>
+                                <Text text="Manage Products">
+                                    <effect>
+                                        <DropShadow color="orange" offsetX="2" offsetY="2" radius="5" />
+                                    </effect>
+                                </Text>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton onAction="#manageManagers" styleClass="sidebar-button" text="">
+                            <graphic>
+                                <Text text="Manage Managers">
+                                    <effect>
+                                        <DropShadow color="deeppink" offsetX="2" offsetY="2" radius="5" />
+                                    </effect>
+                                </Text>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton onAction="#manageAreas" styleClass="sidebar-button" text="">
+                            <graphic>
+                                <Text text="Manage Areas">
+                                    <effect>
+                                        <DropShadow color="yellow" offsetX="2" offsetY="2" radius="5" />
+                                    </effect>
+                                </Text>
+                            </graphic>
+                        </JFXButton>
+                    </children>
+                </VBox>
             </children>
-        </VBox>
+        </AnchorPane>
+
+        <!-- Main content area controlled by ManageOrdersController -->
+        <AnchorPane fx:id="contentPane" prefHeight="1000" prefWidth="1300" styleClass="root-pane">
+            <children>
+                <VBox fx:id="contentVBox" alignment="CENTER" layoutX="50" layoutY="50" prefHeight="696.0" prefWidth="900" spacing="20.0" styleClass="vbox-pane">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10" />
+                    </padding>
+                    <children>
+                        <Label style="-fx-text-fill: black;" styleClass="title-label" text="MANAGE ORDERS">
+                            <effect>
+                                <DropShadow blurType="GAUSSIAN" height="15.0" radius="7.0" spread="0.65" width="15.0">
+                                    <color>
+                                        <Color red="1.0" green="0.4117647111415863" blue="0.7058823704719543" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                        </Label>
+                        <TextField fx:id="searchField" onKeyReleased="#handleSearch" promptText="Search Order by ID" styleClass="search-field" />
+                        <TableView fx:id="orderTableView" prefHeight="240" styleClass="table-view">
+                            <columns>
+                                <TableColumn fx:id="orderIdColumn" style="-fx-text-fill: white;" text="Order ID" />
+                                <TableColumn fx:id="customerIdColumn" style="-fx-text-fill: white;" text="Customer ID" />
+                                <TableColumn fx:id="orderDateColumn" style="-fx-text-fill: white;" text="Order Date" />
+                                <TableColumn fx:id="totalPriceColumn" style="-fx-text-fill: white;" text="Total Price" />
+                            </columns>
+                        </TableView>
+                        <Button onAction="#addOrder" styleClass="add-button">
+                            <graphic>
+                                <Text styleClass="button-text" text="Add Order">
+                                    <effect>
+                                        <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                            <color>
+                                                <Color fx:constant="LIGHTGREEN" />
+                                            </color>
+                                        </DropShadow>
+                                    </effect>
+                                </Text>
+                            </graphic>
+                        </Button>
+                        <Button onAction="#deleteOrder" styleClass="delete-button">
+                            <graphic>
+                                <Text styleClass="button-text" text="Delete Order">
+                                    <effect>
+                                        <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                            <color>
+                                                <Color fx:constant="RED" />
+                                            </color>
+                                        </DropShadow>
+                                    </effect>
+                                </Text>
+                            </graphic>
+                        </Button>
+                        <Button onAction="#updateOrder" styleClass="update-button">
+                            <graphic>
+                                <Text styleClass="button-text" text="Update Order">
+                                    <effect>
+                                        <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                            <color>
+                                                <Color fx:constant="GREEN" />
+                                            </color>
+                                        </DropShadow>
+                                    </effect>
+                                </Text>
+                            </graphic>
+                        </Button>
+                        <Button onAction="#addOrderItem" style="-fx-effect: dropshadow(gaussian, orange, 20, 0.5, 0, 0);" styleClass="add-button">
+                            <graphic>
+                                <Text styleClass="button-text" text="Add Order Item">
+                                    <effect>
+                                        <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                            <color>
+                                                <Color fx:constant="DARKORANGE" />
+                                            </color>
+                                        </DropShadow>
+                                    </effect>
+                                </Text>
+                            </graphic>
+                        </Button>
+                        <Button onAction="#backToMainMenu" styleClass="back-button">
+                            <graphic>
+                                <Text styleClass="button-text" text="Back to Main Menu">
+                                    <effect>
+                                        <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                            <color>
+                                                <Color red="0.8627451062202454" green="0.0784313753247261" blue="0.23529411852359772" />
+                                            </color>
+                                        </DropShadow>
+                                    </effect>
+                                </Text>
+                            </graphic>
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
     </children>
-</AnchorPane>
+</HBox>
