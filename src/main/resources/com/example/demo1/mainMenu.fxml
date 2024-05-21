@@ -15,12 +15,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="800.0" prefWidth="950.0" style="-fx-background-color: #1a1a1a" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.MainMenuController">
+<AnchorPane prefHeight="800.0" prefWidth="1600.0" style="-fx-background-color: #1a1a1a" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.MainMenuController">
     <stylesheets>
         <URL value="@styles.css" />
     </stylesheets>
     <children>
-        <Label layoutX="191.0" layoutY="179.0" prefHeight="118.0" prefWidth="568.0" style="-fx-text-fill: black;" stylesheets="@styles.css" text="MAIN MENU">
+        <Label layoutX="442.0" layoutY="188.0" prefHeight="118.0" prefWidth="568.0" style="-fx-text-fill: black;" stylesheets="@styles.css" text="MAIN MENU">
          <effect>
             <DropShadow blurType="GAUSSIAN" height="15.0" radius="7.0" spread="0.65" width="15.0">
                <color>
@@ -62,9 +62,9 @@
          <font>
             <Font name="Optima Bold" size="96.0" />
          </font></Label>
-        <VBox alignment="CENTER" layoutX="126.0" layoutY="430.0" spacing="25.0">
+        <VBox alignment="CENTER" layoutX="391.0" layoutY="394.0" spacing="25.0">
             <children>
-                <JFXButton onAction="#manageOrders" prefHeight="61.0" prefWidth="182.0" ripplerFill="MAGENTA" styleClass="delete-button" stylesheets="@styles.css" text="">
+                <JFXButton onAction="#manageOrders" prefHeight="61.0" prefWidth="254.0" ripplerFill="MAGENTA" styleClass="delete-button" stylesheets="@styles.css" text="">
                     <graphic>
                         <VBox alignment="CENTER_LEFT">
                             <HBox>
@@ -80,7 +80,7 @@
                                         </DropShadow>
                                     </effect>
                                 </ImageView>
-                                <Text style="-fx-font-size: 24pt" styleClass="text" text="Orders" textAlignment="CENTER" wrappingWidth="123.42056274414062">
+                                <Text style="-fx-font-size: 24pt" styleClass="text" text="Orders" textAlignment="CENTER" wrappingWidth="186.42056274414062">
                                     <effect>
                                         <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
                                             <color>
@@ -140,7 +140,7 @@
                         </DropShadow>
                     </effect>
                 </JFXButton>
-                <JFXButton onAction="#manageCustomers" prefHeight="61.0" prefWidth="182.0" ripplerFill="GREENYELLOW" styleClass="add-button" stylesheets="@styles.css" text="">
+                <JFXButton onAction="#manageCustomers" prefHeight="61.0" prefWidth="253.0" ripplerFill="GREENYELLOW" styleClass="add-button" stylesheets="@styles.css" text="">
                     <graphic>
                         <VBox alignment="CENTER_LEFT">
                             <children>
@@ -180,7 +180,7 @@
                         </DropShadow>
                     </effect>
                 </JFXButton>
-                <JFXButton onAction="#manageProducts" prefHeight="61.0" prefWidth="182.0" ripplerFill="ORANGE" styleClass="orange-button" stylesheets="@styles.css" text="">
+                <JFXButton onAction="#manageProducts" prefHeight="61.0" prefWidth="251.0" ripplerFill="ORANGE" styleClass="orange-button" stylesheets="@styles.css" text="">
                     <graphic>
                         <VBox alignment="CENTER_LEFT">
                             <children>
@@ -222,7 +222,7 @@
                 </JFXButton>
             </children>
         </VBox>
-        <VBox alignment="CENTER" layoutX="546.0" layoutY="430.0" spacing="25.0">
+        <VBox alignment="CENTER" layoutX="823.0" layoutY="394.0" spacing="25.0">
             <children>
                 <JFXButton onAction="#manageManagers" prefHeight="61.0" prefWidth="182.0" ripplerFill="HOTPINK" styleClass="pink-button" stylesheets="@styles.css" text="">
                     <graphic>
@@ -264,7 +264,7 @@
                         </DropShadow>
                     </effect>
                 </JFXButton>
-                <JFXButton onAction="#manageAreas" prefHeight="61.0" prefWidth="182.0" ripplerFill="YELLOW" styleClass="yellow-button" stylesheets="@styles.css" text="">
+                <JFXButton onAction="#manageAreas" prefHeight="61.0" prefWidth="233.0" ripplerFill="YELLOW" styleClass="yellow-button" stylesheets="@styles.css" text="">
                     <graphic>
                         <VBox alignment="CENTER_LEFT">
                             <children>
@@ -282,7 +282,7 @@
                                                 </DropShadow>
                                             </effect>
                                         </ImageView>
-                                        <Text style="-fx-font-size: 24pt" styleClass="text" text="Areas" textAlignment="CENTER" wrappingWidth="109.42056274414062">
+                                        <Text style="-fx-font-size: 24pt" styleClass="text" text="Areas" textAlignment="CENTER" wrappingWidth="166.42056274414062">
                                             <effect>
                                                 <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
                                                     <color>
@@ -304,7 +304,7 @@
                         </DropShadow>
                     </effect>
                 </JFXButton>
-                <JFXButton onAction="#showAnalytics" prefHeight="61.0" prefWidth="182.0" ripplerFill="#a555ec" styleClass="purple-button" stylesheets="@styles.css" text="">
+                <JFXButton onAction="#showAnalytics" prefHeight="61.0" prefWidth="234.0" ripplerFill="#a555ec" styleClass="purple-button" stylesheets="@styles.css" text="">
                     <graphic>
                         <VBox alignment="CENTER_LEFT">
                             <children>
@@ -344,7 +344,7 @@
                         </DropShadow>
                     </effect>
                 </JFXButton>
-                <JFXButton onAction="#exitApplication" prefHeight="61.0" prefWidth="111.0" ripplerFill="RED" styleClass="back-button" stylesheets="@styles.css" text="">
+                <JFXButton onAction="#exitApplication" prefHeight="61.0" prefWidth="233.0" ripplerFill="RED" styleClass="back-button" stylesheets="@styles.css" text="">
                     <graphic>
                         <VBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="92.0">
                             <children>
@@ -362,7 +362,7 @@
                                                 </DropShadow>
                                             </effect>
                                         </ImageView>
-                                        <Text style="-fx-font-size: 24pt" styleClass="text" text="Exit" textAlignment="CENTER" wrappingWidth="67.42056274414062">
+                                        <Text style="-fx-font-size: 24pt" styleClass="text" text="Exit" textAlignment="CENTER" wrappingWidth="164.42056274414062">
                                             <effect>
                                                 <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
                                                     <color>
