@@ -73,14 +73,52 @@ public class OrderDAO {
     }
 
     public void deleteOrder(int id) throws SQLException {
-        String query = "DELETE FROM orders WHERE id = ?";
-        try (Connection connection = DatabaseConnection.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setInt(1, id);
-            statement.executeUpdate();
+        String selectOrderItemsSQL = "SELECT product_id, quantity FROM order_items WHERE order_id = ?";
+        String updateProductQuantitySQL = "UPDATE products SET quantity = quantity + ? WHERE id = ?";
+        String deleteOrderItemsSQL = "DELETE FROM order_items WHERE order_id = ?";
+        String deleteOrderSQL = "DELETE FROM orders WHERE id = ?";
+
+        try (Connection connection = DatabaseConnection.getConnection()) {
+            // Start a transaction
+            connection.setAutoCommit(false);
+            try {
+                // Retrieve all order items for the given order
+                try (PreparedStatement selectStmt = connection.prepareStatement(selectOrderItemsSQL)) {
+                    selectStmt.setInt(1, id);
+                    try (ResultSet rs = selectStmt.executeQuery()) {
+                        while (rs.next()) {
+                            int productId = rs.getInt("product_id");
+                            int quantity = rs.getInt("quantity");
+                            // Increase product quantity
+                            try (PreparedStatement updateStmt = connection.prepareStatement(updateProductQuantitySQL)) {
+                                updateStmt.setInt(1, quantity);
+                                updateStmt.setInt(2, productId);
+                                updateStmt.executeUpdate();
+                            }
+                        }
+                    }
+                }
+                // Delete related order items
+                try (PreparedStatement deleteOrderItemsStmt = connection.prepareStatement(deleteOrderItemsSQL)) {
+                    deleteOrderItemsStmt.setInt(1, id);
+                    deleteOrderItemsStmt.executeUpdate();
+                }
+                // Delete the order
+                try (PreparedStatement deleteOrderStmt = connection.prepareStatement(deleteOrderSQL)) {
+                    deleteOrderStmt.setInt(1, id);
+                    deleteOrderStmt.executeUpdate();
+                }
+                // Commit the transaction
+                connection.commit();
+            } catch (SQLException e) {
+                // Rollback the transaction if there is an error
+                connection.rollback();
+                throw e;
+            } finally {
+                connection.setAutoCommit(true);
+            }
         }
     }
-
     public void updateOrderTotalPrice(int orderId) throws SQLException {
         String query = "UPDATE orders SET total_price = (SELECT SUM(o.quantity * p.price) FROM order_items o JOIN products p ON o.product_id = p.id WHERE o.order_id = ?) WHERE id = ?";
         try (Connection connection = DatabaseConnection.getConnection();

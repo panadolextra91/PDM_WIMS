@@ -1,112 +1,346 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import java.net.URL?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="950.0" prefWidth="950.0" spacing="25.0" style="-fx-background-color: #1a1a1a" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.MainMenuController">
+<?import javafx.scene.control.Label?>
+<AnchorPane prefHeight="800.0" prefWidth="950.0" style="-fx-background-color: #1a1a1a" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.MainMenuController">
     <stylesheets>
         <URL value="@styles.css" />
     </stylesheets>
     <children>
-        <Button mnemonicParsing="false" onAction="#manageOrders" style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(gaussian, magenta, 20, 0.5, 0, 0); -fx-background-color: black;" styleClass="manage-button">
-            <graphic>
-                <Text fill="WHITE" text="Manage Orders">
+        <Label text="MAIN MENU" layoutX="350.0" layoutY="50.0" styleClass="title-label" />
+        <VBox alignment="CENTER" layoutX="126.0" layoutY="430.0" spacing="25.0">
+            <children>
+                <JFXButton onAction="#manageOrders" prefHeight="61.0" prefWidth="182.0" ripplerFill="MAGENTA" styleClass="delete-button" stylesheets="@styles.css" text="">
+                    <graphic>
+                        <VBox alignment="CENTER_LEFT">
+                            <HBox>
+                                <ImageView fx:id="icon" fitHeight="36.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
+                                    <image>
+                                        <Image url="@/images/dolly-flatbed-alt (1).png" />
+                                    </image>
+                                    <effect>
+                                        <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                            <color>
+                                                <Color red="1.0" blue="1.0" />
+                                            </color>
+                                        </DropShadow>
+                                    </effect>
+                                </ImageView>
+                                <Text style="-fx-font-size: 24pt" styleClass="text" text="Orders" textAlignment="CENTER" wrappingWidth="123.42056274414062">
+                                    <effect>
+                                        <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                            <color>
+                                                <Color red="1.0" blue="1.0" />
+                                            </color>
+                                        </DropShadow>
+                                    </effect>
+                                </Text>
+                            </HBox>
+                        </VBox>
+                    </graphic>
                     <effect>
-                        <DropShadow color="magenta" offsetX="1" offsetY="1" radius="2" />
+                        <DropShadow blurType="GAUSSIAN">
+                            <color>
+                                <Color red="0.8815789222717285" green="0.08162768185138702" blue="0.08162768185138702" />
+                            </color>
+                        </DropShadow>
                     </effect>
-                </Text>
-            </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-        </Button>
-        <Button mnemonicParsing="false" onAction="#manageOrderItems" style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(gaussian, aqua, 20, 0.5, 0, 0); -fx-background-color: black;" styleClass="manage-button">
-            <graphic>
-                <Text fill="WHITE" text="Manage Order Items">
+                </JFXButton>
+                <JFXButton onAction="#manageOrderItems" prefHeight="61.0" prefWidth="237.0" ripplerFill="AQUA" styleClass="update-button" stylesheets="@styles.css" text="">
+                    <graphic>
+                        <VBox alignment="CENTER_LEFT">
+                            <children>
+                                <HBox>
+                                    <children>
+                                        <ImageView fx:id="icon1" fitHeight="36.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
+                                            <image>
+                                                <Image url="@/images/picking-box.png" />
+                                            </image>
+                                            <effect>
+                                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                                    <color>
+                                                        <Color green="1.0" blue="1.0" />
+                                                    </color>
+                                                </DropShadow>
+                                            </effect>
+                                        </ImageView>
+                                        <Text style="-fx-font-size: 24pt" styleClass="text" text="Order Items" textAlignment="CENTER" wrappingWidth="189.42056274414062">
+                                            <effect>
+                                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                                    <color>
+                                                        <Color green="1.0" blue="1.0" />
+                                                    </color>
+                                                </DropShadow>
+                                            </effect>
+                                        </Text>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </graphic>
                     <effect>
-                        <DropShadow color="aqua" offsetX="1" offsetY="1" radius="2" />
+                        <DropShadow blurType="GAUSSIAN">
+                            <color>
+                                <Color red="0.8815789222717285" green="0.08162768185138702" blue="0.08162768185138702" />
+                            </color>
+                        </DropShadow>
                     </effect>
-                </Text>
-            </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-        </Button>
-        <Button mnemonicParsing="false" onAction="#manageCustomers" style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(gaussian, greenyellow, 20, 0.5, 0, 0); -fx-background-color: black;" styleClass="manage-button">
-            <graphic>
-                <Text fill="WHITE" text="Manage Customers">
+                </JFXButton>
+                <JFXButton onAction="#manageCustomers" prefHeight="61.0" prefWidth="182.0" ripplerFill="GREENYELLOW" styleClass="add-button" stylesheets="@styles.css" text="">
+                    <graphic>
+                        <VBox alignment="CENTER_LEFT">
+                            <children>
+                                <HBox>
+                                    <children>
+                                        <ImageView fx:id="icon2" fitHeight="36.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
+                                            <image>
+                                                <Image url="@/images/user-salary.png" />
+                                            </image>
+                                            <effect>
+                                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                                    <color>
+                                                        <Color red="0.6784313917160034" green="1.0" blue="0.18431372940540314" />
+                                                    </color>
+                                                </DropShadow>
+                                            </effect>
+                                        </ImageView>
+                                        <Text style="-fx-font-size: 24pt" styleClass="text" text="Customers" textAlignment="CENTER" wrappingWidth="174.42056274414062">
+                                            <effect>
+                                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                                    <color>
+                                                        <Color red="0.6784313917160034" green="1.0" blue="0.18431372940540314" />
+                                                    </color>
+                                                </DropShadow>
+                                            </effect>
+                                        </Text>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </graphic>
                     <effect>
-                        <DropShadow color="yellowgreen" offsetX="1" offsetY="1" radius="2" />
+                        <DropShadow blurType="GAUSSIAN">
+                            <color>
+                                <Color red="0.8815789222717285" green="0.08162768185138702" blue="0.08162768185138702" />
+                            </color>
+                        </DropShadow>
                     </effect>
-                </Text>
-            </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-        </Button>
-        <Button mnemonicParsing="false" onAction="#manageProducts" style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(gaussian, orange, 20, 0.5, 0, 0); -fx-background-color: black;" styleClass="manage-button">
-            <graphic>
-                <Text fill="WHITE" text="Manage Products">
+                </JFXButton>
+                <JFXButton onAction="#manageProducts" prefHeight="61.0" prefWidth="182.0" ripplerFill="ORANGE" styleClass="orange-button" stylesheets="@styles.css" text="">
+                    <graphic>
+                        <VBox alignment="CENTER_LEFT">
+                            <children>
+                                <HBox>
+                                    <children>
+                                        <ImageView fx:id="icon3" fitHeight="36.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
+                                            <image>
+                                                <Image url="@/images/box-dollar.png" />
+                                            </image>
+                                            <effect>
+                                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                                    <color>
+                                                        <Color red="1.0" green="0.6470588445663452" />
+                                                    </color>
+                                                </DropShadow>
+                                            </effect>
+                                        </ImageView>
+                                        <Text style="-fx-font-size: 24pt" styleClass="text" text="Products" textAlignment="CENTER" wrappingWidth="158.42056274414062">
+                                            <effect>
+                                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                                    <color>
+                                                        <Color red="1.0" green="0.6470588445663452" />
+                                                    </color>
+                                                </DropShadow>
+                                            </effect>
+                                        </Text>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </graphic>
                     <effect>
-                        <DropShadow color="orange" offsetX="1" offsetY="1" radius="2" />
+                        <DropShadow blurType="GAUSSIAN">
+                            <color>
+                                <Color red="0.8815789222717285" green="0.08162768185138702" blue="0.08162768185138702" />
+                            </color>
+                        </DropShadow>
                     </effect>
-                </Text>
-            </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-        </Button>
-        <Button mnemonicParsing="false" onAction="#manageManagers" style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(gaussian, hotpink, 20, 0.5, 0, 0); -fx-background-color: black;" styleClass="manage-button">
-            <graphic>
-                <Text fill="WHITE" text="Manage Managers">
+                </JFXButton>
+            </children>
+        </VBox>
+        <VBox alignment="CENTER" layoutX="546.0" layoutY="430.0" spacing="25.0">
+            <children>
+                <JFXButton onAction="#manageManagers" prefHeight="61.0" prefWidth="182.0" ripplerFill="HOTPINK" styleClass="pink-button" stylesheets="@styles.css" text="">
+                    <graphic>
+                        <VBox alignment="CENTER_LEFT">
+                            <children>
+                                <HBox>
+                                    <children>
+                                        <ImageView fx:id="icon4" fitHeight="36.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
+                                            <image>
+                                                <Image url="@/images/admin-alt.png" />
+                                            </image>
+                                            <effect>
+                                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.78" width="15.0">
+                                                    <color>
+                                                        <Color red="1.0" green="0.4117647111415863" blue="0.7058823704719543" />
+                                                    </color>
+                                                </DropShadow>
+                                            </effect>
+                                        </ImageView>
+                                        <Text style="-fx-font-size: 24pt" styleClass="text" text="Managers" textAlignment="CENTER" wrappingWidth="165.42056274414062">
+                                            <effect>
+                                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                                    <color>
+                                                        <Color red="1.0" green="0.4117647111415863" blue="0.7058823704719543" />
+                                                    </color>
+                                                </DropShadow>
+                                            </effect>
+                                        </Text>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </graphic>
                     <effect>
-                        <DropShadow color="deeppink" offsetX="1" offsetY="1" radius="2" />
+                        <DropShadow blurType="GAUSSIAN">
+                            <color>
+                                <Color red="0.8815789222717285" green="0.08162768185138702" blue="0.08162768185138702" />
+                            </color>
+                        </DropShadow>
                     </effect>
-                </Text>
-            </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-        </Button>
-        <Button mnemonicParsing="false" onAction="#manageAreas" style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(gaussian, yellow, 20, 0.5, 0, 0); -fx-background-color: black;" styleClass="manage-button">
-            <graphic>
-                <Text fill="WHITE" text="Manage Areas">
+                </JFXButton>
+                <JFXButton onAction="#manageAreas" prefHeight="61.0" prefWidth="182.0" ripplerFill="YELLOW" styleClass="yellow-button" stylesheets="@styles.css" text="">
+                    <graphic>
+                        <VBox alignment="CENTER_LEFT">
+                            <children>
+                                <HBox>
+                                    <children>
+                                        <ImageView fx:id="icon41" fitHeight="36.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
+                                            <image>
+                                                <Image url="@/images/warehouse-alt.png" />
+                                            </image>
+                                            <effect>
+                                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.78" width="15.0">
+                                                    <color>
+                                                        <Color red="1.0" green="1.0" />
+                                                    </color>
+                                                </DropShadow>
+                                            </effect>
+                                        </ImageView>
+                                        <Text style="-fx-font-size: 24pt" styleClass="text" text="Areas" textAlignment="CENTER" wrappingWidth="109.42056274414062">
+                                            <effect>
+                                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                                    <color>
+                                                        <Color red="1.0" green="1.0" />
+                                                    </color>
+                                                </DropShadow>
+                                            </effect>
+                                        </Text>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </graphic>
                     <effect>
-                        <DropShadow color="yellow" offsetX="1" offsetY="1" radius="2" />
+                        <DropShadow blurType="GAUSSIAN">
+                            <color>
+                                <Color red="0.8815789222717285" green="0.08162768185138702" blue="0.08162768185138702" />
+                            </color>
+                        </DropShadow>
                     </effect>
-                </Text>
-            </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-        </Button>
-        <Button mnemonicParsing="false" onAction="#showAnalytics" style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(gaussian, lightgreen, 20, 0.5, 0, 0); -fx-background-color: black;" styleClass="manage-button">
-            <graphic>
-                <Text fill="WHITE" text="Show Analytics">
+                </JFXButton>
+                <JFXButton onAction="#showAnalytics" prefHeight="61.0" prefWidth="182.0" ripplerFill="#a555ec" styleClass="purple-button" stylesheets="@styles.css" text="">
+                    <graphic>
+                        <VBox alignment="CENTER_LEFT">
+                            <children>
+                                <HBox>
+                                    <children>
+                                        <ImageView fx:id="icon411" fitHeight="36.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
+                                            <image>
+                                                <Image url="@/images/file-spreadsheet.png" />
+                                            </image>
+                                            <effect>
+                                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.78" width="15.0">
+                                                    <color>
+                                                        <Color red="0.6470588445663452" green="0.3333333432674408" blue="0.9254902005195618" />
+                                                    </color>
+                                                </DropShadow>
+                                            </effect>
+                                        </ImageView>
+                                        <Text style="-fx-font-size: 24pt" styleClass="text" text="Analytics" textAlignment="CENTER" wrappingWidth="159.42056274414062">
+                                            <effect>
+                                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                                    <color>
+                                                        <Color red="0.6470588445663452" green="0.3333333432674408" blue="0.9254902005195618" />
+                                                    </color>
+                                                </DropShadow>
+                                            </effect>
+                                        </Text>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </graphic>
                     <effect>
-                        <DropShadow color="lightgreen" offsetX="1" offsetY="1" radius="2" />
+                        <DropShadow blurType="GAUSSIAN">
+                            <color>
+                                <Color red="0.8815789222717285" green="0.08162768185138702" blue="0.08162768185138702" />
+                            </color>
+                        </DropShadow>
                     </effect>
-                </Text>
-            </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-        </Button>
-        <Button mnemonicParsing="false" onAction="#exitApplication" style="-fx-font-weight: bold; -fx-font-size: 24pt; -fx-font-family: 'Impact'; -fx-effect: dropshadow(gaussian, red, 20, 0.5, 0, 0); -fx-background-color: black;" styleClass="manage-button">
-            <graphic>
-                <Text fill="WHITE" text="Exit">
+                </JFXButton>
+                <JFXButton onAction="#exitApplication" prefHeight="61.0" prefWidth="111.0" ripplerFill="RED" styleClass="back-button" stylesheets="@styles.css" text="">
+                    <graphic>
+                        <VBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="92.0">
+                            <children>
+                                <HBox>
+                                    <children>
+                                        <ImageView fx:id="icon4111" fitHeight="43.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
+                                            <image>
+                                                <Image url="@/images/angle-small-left.png" />
+                                            </image>
+                                            <effect>
+                                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.78" width="15.0">
+                                                    <color>
+                                                        <Color red="1.0" />
+                                                    </color>
+                                                </DropShadow>
+                                            </effect>
+                                        </ImageView>
+                                        <Text style="-fx-font-size: 24pt" styleClass="text" text="Exit" textAlignment="CENTER" wrappingWidth="67.42056274414062">
+                                            <effect>
+                                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                                    <color>
+                                                        <Color red="1.0" />
+                                                    </color>
+                                                </DropShadow>
+                                            </effect>
+                                        </Text>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </graphic>
                     <effect>
-                        <DropShadow color="red" offsetX="1" offsetY="1" radius="2" />
+                        <DropShadow blurType="GAUSSIAN">
+                            <color>
+                                <Color red="0.8815789222717285" green="0.08162768185138702" blue="0.08162768185138702" />
+                            </color>
+                        </DropShadow>
                     </effect>
-                </Text>
-            </graphic>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-        </Button>
+                </JFXButton>
+            </children>
+        </VBox>
     </children>
-</VBox>
+</AnchorPane>

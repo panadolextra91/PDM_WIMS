@@ -23,7 +23,7 @@
                 <Insets bottom="10" left="10" right="10" top="10" />
             </padding>
             <children>
-                <Label style="-fx-text-fill: black;" styleClass="title-label" text="MANAGE ORDERS">
+                <Label style="-fx-text-fill: black" styleClass="title-label" text="MANAGE ORDERS">
                <effect>
                   <DropShadow blurType="GAUSSIAN" height="15.0" radius="7.0" spread="0.65" width="15.0">
                      <color>

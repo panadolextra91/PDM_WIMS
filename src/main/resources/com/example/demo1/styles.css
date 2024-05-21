@@ -11,7 +11,7 @@
     /*-fx-text-fill: white;*/
     -fx-font-size: 50pt;
     -fx-font-weight: bold;
-    -fx-font-family: 'Impact';
+    -fx-font-family: 'Optima';
 }
 
 .search-field {
@@ -48,7 +48,6 @@
     -fx-effect: dropshadow(gaussian, greenyellow, 20, 0.5, 0, 0);
     -fx-transition: all 0.3s ease;
     -fx-background-color: black;
-    -fx-text-fill: white;
     -fx-background-radius: 15; /* Add background radius */
     -fx-border-width: 0.5; /* Add border width */
     -fx-border-radius: 15; /* Add border radius */
@@ -68,7 +67,6 @@
     -fx-effect: dropshadow(gaussian, aqua, 20, 0.5, 0, 0);
     -fx-transition: all 0.3s ease;
     -fx-background-color: black;
-    -fx-text-fill: white;
     -fx-background-radius: 15; /* Add background radius */
     -fx-border-width: 0.5; /* Add border width */
     -fx-border-radius: 15; /* Add border radius */
@@ -90,7 +88,6 @@
     -fx-effect: dropshadow(gaussian, crimson, 20, 0.5, 0, 0);
     -fx-transition: all 0.3s ease;
     -fx-background-color: black;
-    -fx-text-fill: white;
     -fx-background-radius: 15; /* Add background radius */
     -fx-border-width: 0.5; /* Add border width */
     -fx-border-radius: 15; /* Add border radius */
@@ -110,7 +107,6 @@
     -fx-effect: dropshadow(gaussian, magenta, 20, 0.5, 0, 0);
     -fx-transition: all 0.3s ease;
     -fx-background-color: black;
-    -fx-text-fill: white;
     -fx-background-radius: 15; /* Add background radius */
     -fx-border-width: 0.5; /* Add border width */
     -fx-border-radius: 15; /* Add border radius */
@@ -145,5 +141,78 @@
     -fx-scale-y: 1.1;
     -fx-cursor: pointer;
 }
+
+.orange-button {
+    -fx-font-weight: bold;
+    -fx-font-size: 17pt;
+    -fx-font-family: 'Impact';
+    -fx-effect: dropshadow(gaussian, orange, 20, 0.5, 0, 0);
+    -fx-transition: all 0.3s ease;
+    -fx-background-color: black;
+    -fx-background-radius: 15; /* Add background radius */
+    -fx-border-width: 0.5; /* Add border width */
+    -fx-border-radius: 15; /* Add border radius */
+}
+
+.orange-button:hover {
+    -fx-font-size: 26pt; /* Increase font size on hover */
+    -fx-scale-x: 1.1; /* Scale button size on hover */
+    -fx-scale-y: 1.1;
+}
+
+.pink-button {
+    -fx-font-weight: bold;
+    -fx-font-size: 17pt;
+    -fx-font-family: 'Impact';
+    -fx-effect: dropshadow(gaussian, hotpink, 20, 0.5, 0, 0);
+    -fx-transition: all 0.3s ease;
+    -fx-background-color: black;
+    -fx-background-radius: 15; /* Add background radius */
+    -fx-border-width: 0.5; /* Add border width */
+    -fx-border-radius: 15; /* Add border radius */
+}
+
+.pink-button:hover {
+    -fx-font-size: 26pt; /* Increase font size on hover */
+    -fx-scale-x: 1.1; /* Scale button size on hover */
+    -fx-scale-y: 1.1;
+}
+
+.yellow-button {
+    -fx-font-weight: bold;
+    -fx-font-size: 17pt;
+    -fx-font-family: 'Impact';
+    -fx-effect: dropshadow(gaussian, yellow, 20, 0.5, 0, 0);
+    -fx-transition: all 0.3s ease;
+    -fx-background-color: black;
+    -fx-background-radius: 15; /* Add background radius */
+    -fx-border-width: 0.5; /* Add border width */
+    -fx-border-radius: 15; /* Add border radius */
+}
+
+.yellow-button:hover {
+    -fx-font-size: 26pt; /* Increase font size on hover */
+    -fx-scale-x: 1.1; /* Scale button size on hover */
+    -fx-scale-y: 1.1;
+}
+
+.purple-button {
+    -fx-font-weight: bold;
+    -fx-font-size: 17pt;
+    -fx-font-family: 'Impact';
+    -fx-effect: dropshadow(gaussian, #a555ec, 20, 0.5, 0, 0);
+    -fx-transition: all 0.3s ease;
+    -fx-background-color: black;
+    -fx-background-radius: 15; /* Add background radius */
+    -fx-border-width: 0.5; /* Add border width */
+    -fx-border-radius: 15; /* Add border radius */
+}
+
+.purple-button:hover {
+    -fx-font-size: 26pt; /* Increase font size on hover */
+    -fx-scale-x: 1.1; /* Scale button size on hover */
+    -fx-scale-y: 1.1;
+}
+
 
 
