@@ -14,6 +14,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.Tooltip;
@@ -41,6 +42,8 @@ public class AnalyticsController {
 
     @FXML
     private PieChart revenueChart;
+    @FXML
+    private Label totalRevenueLabel;
 
     private OrderDAO orderDAO = new OrderDAO();
     private OrderItemDAO orderItemDAO = new OrderItemDAO();
@@ -84,6 +87,7 @@ public class AnalyticsController {
 
         // Load and populate the revenue chart
         loadRevenueData();
+        calculateAndDisplayTotalRevenue();
     }
 
     private void loadSalesData() {
@@ -173,6 +177,24 @@ public class AnalyticsController {
                 slice.getNode().setPickOnBounds(true);
             }
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    private void calculateAndDisplayTotalRevenue() {
+        try {
+            List<Order> orders = orderDAO.getAllOrders();
+            double totalRevenue = 0.0;
+
+            for (Order order : orders) {
+                List<OrderItem> orderItems = orderItemDAO.getOrderItemsByOrderId(order.getId());
+                for (OrderItem orderItem : orderItems) {
+                    double revenue = orderItem.getQuantity() * productDAO.getProductById(orderItem.getProductId()).getPrice();
+                    totalRevenue += revenue;
+                }
+            }
+
+            totalRevenueLabel.setText("Total Revenue: $" + String.format("%.2f", totalRevenue));
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -100,7 +100,7 @@
         </AnchorPane>
         <ScrollPane fitToWidth="true" prefHeight="850.0" prefWidth="1142.0" style="-fx-background-color: #1a1a1a" styleClass="scroll-pane">
             <content>
-                <VBox fx:id="contentVBox" alignment="CENTER" prefHeight="1048.0" prefWidth="1126.0" spacing="10" style="-fx-background-color: #1a1a1a">
+                <VBox fx:id="contentVBox" alignment="CENTER" prefHeight="1193.0" prefWidth="1126.0" spacing="10" style="-fx-background-color: #1a1a1a">
                     <padding>
                         <Insets bottom="10" left="10" right="10" top="10" />
                     </padding>
@@ -128,7 +128,8 @@
                                 <TableColumn fx:id="currentStockColumn" style="-fx-text-fill: white" text="Current Stock" />
                             </columns>
                         </TableView>
-                        <PieChart fx:id="revenueChart" prefHeight="400.0" prefWidth="1120.0" styleClass="chart" title="Total Revenue" />
+                         <Label fx:id="totalRevenueLabel" style="-fx-text-fill: white; -fx-font-size: 18pt;" text="Total Revenue: $" />
+                        <PieChart fx:id="revenueChart" prefHeight="400.0" prefWidth="1120.0" styleClass="chart" />
                     </children>
                 </VBox>
             </content>
