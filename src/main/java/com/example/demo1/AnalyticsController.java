@@ -1,5 +1,7 @@
 package com.example.demo1;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -29,13 +31,13 @@ public class AnalyticsController {
     private BarChart<String, Number> salesChart;
 
     @FXML
-    private TableView<ProductStock> lowStockTable;
+    private TableView<Product> lowStockTable;
 
     @FXML
-    private TableColumn<ProductStock, String> productNameColumn;
+    private TableColumn<Product, String> productNameColumn;
 
     @FXML
-    private TableColumn<ProductStock, Integer> currentStockColumn;
+    private TableColumn<Product, Integer> currentStockColumn;
 
     @FXML
     private PieChart revenueChart;
@@ -43,9 +45,37 @@ public class AnalyticsController {
     private OrderDAO orderDAO = new OrderDAO();
     private OrderItemDAO orderItemDAO = new OrderItemDAO();
     private ProductDAO productDAO = new ProductDAO();
+    public void manageOrders(ActionEvent event) throws IOException {
+        MainController.loadScene("manageOrders.fxml");
+    }
+
+    public void manageOrderItems(ActionEvent event) throws IOException {
+        MainController.loadScene("manageOrderItems.fxml");
+    }
+
+    public void manageCustomers(ActionEvent event) throws IOException {
+        MainController.loadScene("manageCustomers.fxml");
+    }
+
+    public void manageProducts(ActionEvent event) throws IOException {
+        MainController.loadScene("manageProducts.fxml");
+    }
+
+    public void manageManagers(ActionEvent event) throws IOException {
+        MainController.loadScene("manageManagers.fxml");
+    }
+
+    public void manageAreas(ActionEvent event) throws IOException {
+        MainController.loadScene("manageAreas.fxml");
+    }
+    public void showAnalytics(ActionEvent event) throws IOException {
+        MainController.loadScene("analytics.fxml");
+    }
 
     @FXML
     public void initialize() {
+        productNameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
+        currentStockColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getQuantity()).asObject());
         // Load and populate the sales chart
         loadSalesData();
 
@@ -81,24 +111,35 @@ public class AnalyticsController {
         NumberAxis yAxis = (NumberAxis) salesChart.getYAxis();
         yAxis.setTickUnit(1);
         yAxis.setMinorTickCount(0);
+        yAxis.setAutoRanging(false);
+        yAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(yAxis) {
+            @Override
+            public String toString(Number object) {
+                return String.format("%d", object.intValue());
+            }
+        });
+
+        // Set the lower and upper bound of y-axis based on max value of the sales
+        int maxSales = series.getData().stream().mapToInt(data -> data.getYValue().intValue()).max().orElse(10);
+        yAxis.setLowerBound(0);
+        yAxis.setUpperBound(maxSales + 1);
 
         salesChart.getData().add(series);
     }
 
     private void loadLowStockData() {
-        ObservableList<ProductStock> data = FXCollections.observableArrayList();
+        ObservableList<Product> data = FXCollections.observableArrayList();
 
         try {
             List<Product> products = productDAO.getAllProducts();
             for (Product product : products) {
                 if (product.getQuantity() < 10) { // Assuming low stock is less than 10
-                    data.add(new ProductStock(product.getName(), product.getQuantity()));
+                    data.add(product);
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         lowStockTable.setItems(data);
     }
 
@@ -134,33 +175,6 @@ public class AnalyticsController {
 
         } catch (SQLException e) {
             e.printStackTrace();
-        }
-    }
-
-    @FXML
-    private void backToMainMenu(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public static class ProductStock {
-        private final String name;
-        private final int quantity;
-
-        public ProductStock(String name, int quantity) {
-            this.name = name;
-            this.quantity = quantity;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public int getQuantity() {
-            return quantity;
         }
     }
 }

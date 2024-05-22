@@ -28,7 +28,7 @@
                       <URL value="@styles.css" />
                   </stylesheets>
                   <children>
-                      <JFXButton onAction="#manageOrders" ripplerFill="MAGENTA" styleClass="sidebar-button" text="">
+                      <JFXButton onAction="#manageOrders"  styleClass="sidebar-button" text="">
                           <graphic>
                               <Text text="Manage Orders">
                                   <effect>
@@ -37,7 +37,7 @@
                               </Text>
                           </graphic>
                       </JFXButton>
-                      <JFXButton onAction="#manageOrderItems" ripplerFill="AQUA" styleClass="sidebar-button" text="">
+                      <JFXButton onAction="#manageOrderItems"  styleClass="sidebar-button" text="">
                           <graphic>
                               <Text text="Manage Order Items">
                                   <effect>
@@ -46,7 +46,7 @@
                               </Text>
                           </graphic>
                       </JFXButton>
-                      <JFXButton onAction="#manageCustomers" ripplerFill="GREENYELLOW" styleClass="sidebar-button" text="">
+                      <JFXButton onAction="#manageCustomers"  styleClass="sidebar-button" text="">
                           <graphic>
                               <Text text="Manage Customers">
                                   <effect>
@@ -55,7 +55,7 @@
                               </Text>
                           </graphic>
                       </JFXButton>
-                      <JFXButton onAction="#manageProducts" ripplerFill="ORANGE" styleClass="sidebar-button" text="">
+                      <JFXButton onAction="#manageProducts"  styleClass="sidebar-button" text="">
                           <graphic>
                               <Text text="Manage Products">
                                   <effect>
@@ -64,7 +64,7 @@
                               </Text>
                           </graphic>
                       </JFXButton>
-                      <JFXButton onAction="#manageManagers" ripplerFill="DEEPPINK" styleClass="sidebar-button" text="">
+                      <JFXButton onAction="#manageManagers"  styleClass="sidebar-button" text="">
                           <graphic>
                               <Text text="Manage Managers">
                                   <effect>
@@ -73,11 +73,20 @@
                               </Text>
                           </graphic>
                       </JFXButton>
-                      <JFXButton onAction="#manageAreas" ripplerFill="YELLOW" styleClass="sidebar-button" text="">
+                      <JFXButton onAction="#manageAreas"  styleClass="sidebar-button" text="">
                           <graphic>
                               <Text text="Manage Areas">
                                   <effect>
                                       <DropShadow color="yellow" offsetX="2" offsetY="2" radius="5" />
+                                  </effect>
+                              </Text>
+                          </graphic>
+                      </JFXButton>
+                      <JFXButton onAction="#showAnalytics" styleClass="sidebar-button" text="">
+                          <graphic>
+                              <Text text="Analytics">
+                                  <effect>
+                                      <DropShadow color="#a555ec" offsetX="2" offsetY="2" radius="5" />
                                   </effect>
                               </Text>
                           </graphic>
@@ -111,7 +120,7 @@
                                 <TableColumn fx:id="managerIdColumn" style="-fx-text-fill: white" text="Manager ID" />
                             </columns>
                         </TableView>
-                        <Button onAction="#addArea" styleClass="add-button">
+                        <JFXButton onAction="#addArea" styleClass="add-button" text="">
                             <graphic>
                                 <Text styleClass="button-text" text="Add Area">
                                     <effect>
@@ -123,8 +132,8 @@
                                     </effect>
                                 </Text>
                             </graphic>
-                        </Button>
-                        <Button onAction="#updateArea" styleClass="update-button">
+                        </JFXButton>
+                        <JFXButton onAction="#updateArea" styleClass="update-button" text="">
                             <graphic>
                                 <Text styleClass="button-text" text="Update Area">
                                     <effect>
@@ -136,8 +145,8 @@
                                     </effect>
                                 </Text>
                             </graphic>
-                        </Button>
-                        <Button onAction="#deleteArea" styleClass="delete-button">
+                        </JFXButton>
+                        <JFXButton onAction="#deleteArea" styleClass="delete-button" text="">
                             <graphic>
                                 <Text styleClass="button-text" text="Delete Area">
                                     <effect>
@@ -149,20 +158,7 @@
                                     </effect>
                                 </Text>
                             </graphic>
-                        </Button>
-                        <Button onAction="#backToMainMenu" styleClass="back-button">
-                            <graphic>
-                                <Text styleClass="button-text" text="Back to Main Menu">
-                                    <effect>
-                                        <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
-                                            <color>
-                                                <Color red="0.8627451062202454" green="0.0784313753247261" blue="0.23529411852359772" />
-                                            </color>
-                                        </DropShadow>
-                                    </effect>
-                                </Text>
-                            </graphic>
-                        </Button>
+                        </JFXButton>
                     </children>
                 </VBox>
             </children>

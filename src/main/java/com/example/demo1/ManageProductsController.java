@@ -56,6 +56,9 @@ public class ManageProductsController {
     public void manageAreas(ActionEvent event) throws IOException {
         MainController.loadScene("manageAreas.fxml");
     }
+    public void showAnalytics(ActionEvent event) throws IOException {
+        MainController.loadScene("analytics.fxml");
+    }
 
     @FXML
     public void initialize() {

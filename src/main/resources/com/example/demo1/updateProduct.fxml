@@ -9,6 +9,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Text?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <AnchorPane prefHeight="1000" prefWidth="1000" style="-fx-background-color: #1a1a1a" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.UpdateProductController">
     <stylesheets>
         <URL value="@styles.css" />
@@ -26,7 +27,7 @@
         <Label layoutX="200" layoutY="400" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Quantity:" />
         <TextField fx:id="quantityField" layoutX="400" layoutY="400" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
 
-        <Button layoutX="400" layoutY="500" onAction="#handleUpdateProduct" styleClass="update-button">
+        <JFXButton layoutX="400" layoutY="450" onAction="#handleUpdateProduct" styleClass="update-button" text="">
             <graphic>
                 <Text styleClass="button-text" text="Update">
                     <effect>
@@ -37,9 +38,9 @@
                     </effect>
                 </Text>
             </graphic>
-        </Button>
+        </JFXButton>
 
-        <Button layoutX="600" layoutY="500" onAction="#handleCancel" styleClass="back-button">
+        <JFXButton layoutX="600" layoutY="450" onAction="#handleCancel" styleClass="back-button" text="">
             <graphic>
                 <Text styleClass="button-text" text="Cancel">
                     <effect>
@@ -50,6 +51,6 @@
                     </effect>
                 </Text>
             </graphic>
-        </Button>
+        </JFXButton>
     </children>
 </AnchorPane>

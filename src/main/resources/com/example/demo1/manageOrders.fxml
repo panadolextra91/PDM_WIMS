@@ -82,6 +82,15 @@
                                 </Text>
                             </graphic>
                         </JFXButton>
+                        <JFXButton onAction="#showAnalytics" styleClass="sidebar-button" text="">
+                            <graphic>
+                                <Text text="Analytics">
+                                    <effect>
+                                        <DropShadow color="#a555ec" offsetX="2" offsetY="2" radius="5" />
+                                    </effect>
+                                </Text>
+                            </graphic>
+                        </JFXButton>
                     </children>
                 </VBox>
             </children>
@@ -113,46 +122,46 @@
                                 <TableColumn fx:id="totalPriceColumn" style="-fx-text-fill: white;" text="Total Price" />
                             </columns>
                         </TableView>
-                        <Button onAction="#addOrder" styleClass="add-button">
+                        <JFXButton onAction="#addOrder" styleClass="add-button" text="">
                             <graphic>
                                 <Text styleClass="button-text" text="Add Order">
                                     <effect>
                                         <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
                                             <color>
-                                                <Color fx:constant="LIGHTGREEN" />
+                                                <Color fx:constant="GREENYELLOW" />
                                             </color>
                                         </DropShadow>
                                     </effect>
                                 </Text>
                             </graphic>
-                        </Button>
-                        <Button onAction="#deleteOrder" styleClass="delete-button">
+                        </JFXButton>
+                        <JFXButton onAction="#deleteOrder" styleClass="delete-button" text="">
                             <graphic>
                                 <Text styleClass="button-text" text="Delete Order">
                                     <effect>
                                         <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
                                             <color>
-                                                <Color fx:constant="RED" />
+                                                <Color red="1.0" blue="1.0" />
                                             </color>
                                         </DropShadow>
                                     </effect>
                                 </Text>
                             </graphic>
-                        </Button>
-                        <Button onAction="#updateOrder" styleClass="update-button">
+                        </JFXButton>
+                        <JFXButton onAction="#updateOrder" styleClass="update-button" text="">
                             <graphic>
                                 <Text styleClass="button-text" text="Update Order">
                                     <effect>
                                         <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
                                             <color>
-                                                <Color fx:constant="GREEN" />
+                                                <Color green="1.0" blue="1.0" />
                                             </color>
                                         </DropShadow>
                                     </effect>
                                 </Text>
                             </graphic>
-                        </Button>
-                        <Button onAction="#addOrderItem" style="-fx-effect: dropshadow(gaussian, orange, 20, 0.5, 0, 0);" styleClass="add-button">
+                        </JFXButton>
+                        <JFXButton onAction="#addOrderItem" styleClass="add-button" text="">
                             <graphic>
                                 <Text styleClass="button-text" text="Add Order Item">
                                     <effect>
@@ -164,20 +173,7 @@
                                     </effect>
                                 </Text>
                             </graphic>
-                        </Button>
-                        <Button onAction="#backToMainMenu" styleClass="back-button">
-                            <graphic>
-                                <Text styleClass="button-text" text="Back to Main Menu">
-                                    <effect>
-                                        <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
-                                            <color>
-                                                <Color red="0.8627451062202454" green="0.0784313753247261" blue="0.23529411852359772" />
-                                            </color>
-                                        </DropShadow>
-                                    </effect>
-                                </Text>
-                            </graphic>
-                        </Button>
+                        </JFXButton>
                     </children>
                 </VBox>
             </children>
