@@ -9,18 +9,19 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="1000" prefWidth="1000" style="-fx-background-color: #1a1a1a" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.AddAreaController">
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane prefHeight="1000" prefWidth="1600" style="-fx-background-color: #1a1a1a" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.AddAreaController">
     <stylesheets>
         <URL value="@styles.css" />
     </stylesheets>
     <children>
-        <Label layoutX="200" layoutY="300" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Name:" />
-        <TextField fx:id="nameField" layoutX="400" layoutY="300" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
+        <Label layoutX="449.0" layoutY="330.0" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Name:" />
+        <TextField fx:id="nameField" layoutX="649.0" layoutY="330.0" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt; -fx-border-color: transparent;" />
 
-        <Label layoutX="200" layoutY="350" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Manager ID:" />
-        <TextField fx:id="managerIdField" layoutX="400" layoutY="350" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
+        <Label layoutX="449.0" layoutY="380.0" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Manager ID:" />
+        <TextField fx:id="managerIdField" layoutX="649.0" layoutY="380.0" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt; -fx-border-color: transparent;" />
 
-        <Button contentDisplay="CENTER" layoutX="400" layoutY="450" onAction="#handleAddArea" prefHeight="43.0" prefWidth="62.0" styleClass="add-button">
+        <JFXButton text="" contentDisplay="CENTER" layoutX="640.0" layoutY="450.0" onAction="#handleAddArea" prefHeight="43.0" prefWidth="62.0" styleClass="add-button">
             <graphic>
                 <Text styleClass="button-text" text="Add">
                     <effect>
@@ -31,9 +32,9 @@
                     </effect>
                 </Text>
             </graphic>
-        </Button>
+        </JFXButton>
 
-        <Button layoutX="600" layoutY="450" onAction="#handleCancel" styleClass="back-button">
+        <JFXButton text="" layoutX="970.0" layoutY="450.0" onAction="#handleCancel" styleClass="back-button">
             <graphic>
                 <Text text="Cancel">
                     <effect>
@@ -44,6 +45,6 @@
                     </effect>
                 </Text>
             </graphic>
-        </Button>
+        </JFXButton>
     </children>
 </AnchorPane>

@@ -11,18 +11,19 @@
 
 <!--- layoutX: to left or right, layoutY: up or down -->
 
-<AnchorPane prefHeight="1000" prefWidth="1000" style="-fx-background-color: #1a1a1a" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.AddCustomerController">
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane prefHeight="1000" prefWidth="1600" style="-fx-background-color: #1a1a1a" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.AddCustomerController">
     <stylesheets>
         <URL value="@styles.css" />
     </stylesheets>
     <children>
-        <Label layoutX="200" layoutY="300" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Name:" />
-        <TextField fx:id="nameField" layoutX="400" layoutY="300" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white;  -fx-font-size: 15pt;" />
+        <Label layoutX="446.0" layoutY="350.0" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Name:" />
+        <TextField fx:id="nameField" layoutX="646.0" layoutY="350.0" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white;  -fx-font-size: 15pt;" />
 
-        <Label layoutX="200" layoutY="350" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Email:" />
-        <TextField fx:id="emailField" layoutX="400" layoutY="350" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white;  -fx-font-size: 15pt;" />
+        <Label layoutX="446.0" layoutY="400.0" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Email:" />
+        <TextField fx:id="emailField" layoutX="646.0" layoutY="400.0" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white;  -fx-font-size: 15pt;" />
 
-        <Button layoutX="400" layoutY="480" onAction="#handleAddCustomer" styleClass="add-button">
+        <JFXButton text="" layoutX="631.0" layoutY="450.0" onAction="#handleAddCustomer" styleClass="add-button">
             <graphic>
                 <Text styleClass="button-text" text="Add">
                     <effect>
@@ -33,9 +34,9 @@
                     </effect>
                 </Text>
             </graphic>
-        </Button>
+        </JFXButton>
 
-        <Button layoutX="550" layoutY="480" onAction="#handleCancel" styleClass="back-button">
+        <JFXButton text="" layoutX="966.0" layoutY="450.0" onAction="#handleCancel" styleClass="back-button">
             <graphic>
                 <Text styleClass="button-text" text="Cancel">
                     <effect>
@@ -46,6 +47,6 @@
                     </effect>
                 </Text>
             </graphic>
-        </Button>
+        </JFXButton>
     </children>
 </AnchorPane>

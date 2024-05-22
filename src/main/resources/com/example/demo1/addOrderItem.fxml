@@ -10,24 +10,25 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="1000" prefWidth="1000" style="-fx-background-color: #1a1a1a" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.AddOrderItemController">
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane prefHeight="1000" prefWidth="1600" style="-fx-background-color: #1a1a1a" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.AddOrderItemController">
     <stylesheets>
         <URL value="@styles.css" />
     </stylesheets>
     <children>
-        <Label layoutX="200" layoutY="250" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Product Name:" />
-        <ComboBox fx:id="productNameComboBox" layoutX="400" layoutY="250" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
+        <Label layoutX="499.0" layoutY="318.0" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Product Name:" />
+        <ComboBox fx:id="productNameComboBox" layoutX="699.0" layoutY="318.0" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" styleClass="custom-combo-box" />
 
-        <Label layoutX="200" layoutY="300" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Order ID:" />
-        <TextField fx:id="orderIdField" layoutX="400" layoutY="300" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
+        <Label layoutX="499.0" layoutY="368.0" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Order ID:" />
+        <TextField fx:id="orderIdField" layoutX="699.0" layoutY="368.0" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
 
-        <Label layoutX="200" layoutY="350" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Product ID:" />
-        <TextField fx:id="productIdField" layoutX="400" layoutY="350" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
+        <Label layoutX="499.0" layoutY="418.0" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Product ID:" />
+        <TextField fx:id="productIdField" layoutX="699.0" layoutY="418.0" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
 
-        <Label layoutX="200" layoutY="400" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Quantity:" />
-        <TextField fx:id="quantityField" layoutX="400" layoutY="400" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
+        <Label layoutX="499.0" layoutY="468.0" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Quantity:" />
+        <TextField fx:id="quantityField" layoutX="699.0" layoutY="468.0" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
 
-        <Button layoutX="400" layoutY="480.0" onAction="#handleAddOrderItem" styleClass="add-button">
+        <JFXButton text="" layoutX="680.0" layoutY="530.0" onAction="#handleAddOrderItem" styleClass="add-button">
             <graphic>
                 <Text styleClass="button-text" text="Add">
                     <effect>
@@ -39,9 +40,9 @@
                     </effect>
                 </Text>
             </graphic>
-        </Button>
+        </JFXButton>
 
-        <Button layoutX="550" layoutY="480.0" onAction="#handleCancel" styleClass="back-button">
+        <JFXButton text="" layoutX="1013.0" layoutY="530.0" onAction="#handleCancel" styleClass="back-button">
             <graphic>
                 <Text styleClass="button-text" text="Cancel">
                     <effect>
@@ -53,6 +54,6 @@
                     </effect>
                 </Text>
             </graphic>
-        </Button>
+        </JFXButton>
     </children>
 </AnchorPane>

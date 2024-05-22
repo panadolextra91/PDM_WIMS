@@ -57,6 +57,7 @@
     -fx-scale-x: 1.1; /* Scale button size on hover */
     -fx-scale-y: 1.1;
     -fx-cursor: pointer;
+    -fx-background-color: transparent;
 }
 
 .update-button {
@@ -76,6 +77,7 @@
     -fx-scale-x: 1.1; /* Scale button size on hover */
     -fx-scale-y: 1.1;
     -fx-cursor: pointer;
+    -fx-background-color: transparent;
 
 
 }
@@ -97,6 +99,8 @@
     -fx-scale-x: 1.1; /* Scale button size on hover */
     -fx-scale-y: 1.1;
     -fx-cursor: pointer;
+    -fx-background-color: transparent;
+
 }
 
 .delete-button {
@@ -116,6 +120,8 @@
     -fx-scale-x: 1.1; /* Scale button size on hover */
     -fx-scale-y: 1.1;
     -fx-cursor: pointer;
+    -fx-background-color: transparent;
+
 }
 
 .table-row-cell {
@@ -157,6 +163,8 @@
     -fx-font-size: 26pt; /* Increase font size on hover */
     -fx-scale-x: 1.1; /* Scale button size on hover */
     -fx-scale-y: 1.1;
+    -fx-background-color: transparent;
+
 }
 
 .pink-button {
@@ -253,6 +261,17 @@
 .chart-pie-label {
     -fx-text-fill: white;
 }
+.custom-combo-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: #212121;
+}
+
+.custom-combo-box .combo-box-popup .list-view .list-cell:filled:selected,
+.custom-combo-box .combo-box-popup .list-view .list-cell:filled:hover {
+    -fx-background-color: black; /* Same as the ComboBox background */
+    -fx-text-fill: white;
+}
+
 
 
 
