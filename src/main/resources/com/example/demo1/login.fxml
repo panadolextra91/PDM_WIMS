@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Text?>
+<?import java.net.URL?>
+
+<AnchorPane prefHeight="473.0" prefWidth="673.0" styleClass="root-pane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.LoginController">
+   <stylesheets>
+      <URL value="@styles.css" />
+   </stylesheets>
+   <children>
+      <ImageView fitHeight="473.0" fitWidth="277.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/images/login.jpeg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="usernameField" layoutX="408.0" layoutY="203.0" prefHeight="26.0" prefWidth="224.0" style="-fx-text-fill: white; -fx-background-color: #212121;" />
+      <TextField fx:id="passwordField" layoutX="408.0" layoutY="246.0" prefHeight="26.0" prefWidth="224.0" style="-fx-background-color: #212121; -fx-text-fill: white;" />
+      <Text layoutX="346.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-label" text="Sign In">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+               <color>
+                  <Color red="1.0" green="0.4117647111415863" blue="0.7058823704719543" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Text>
+      <Text fill="WHITE" layoutX="295.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15pt; -fx-font-family: Impact;" text="User Name" />
+      <Text fill="WHITE" layoutX="295.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15pt; -fx-font-family: Impact;" text="Password" />
+      <JFXButton layoutX="433.0" layoutY="312.0" styleClass="add-button" text="" onMouseClicked="#handleLogin">
+         <graphic>
+            <Text styleClass="button-text" text="Login">
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                     <color>
+                        <Color red="0.6784313917160034" green="1.0" blue="0.18431372940540314" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Text>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>
