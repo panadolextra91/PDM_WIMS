@@ -1,15 +1,13 @@
 package com.example.demo1;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.PieChart;
@@ -18,7 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.Tooltip;
-import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -42,12 +40,16 @@ public class AnalyticsController {
 
     @FXML
     private PieChart revenueChart;
+
     @FXML
     private Label totalRevenueLabel;
 
     private OrderDAO orderDAO = new OrderDAO();
     private OrderItemDAO orderItemDAO = new OrderItemDAO();
     private ProductDAO productDAO = new ProductDAO();
+
+    private Timeline refreshTimeline;
+
     public void manageOrders(ActionEvent event) throws IOException {
         MainController.loadScene("manageOrders.fxml");
     }
@@ -71,6 +73,7 @@ public class AnalyticsController {
     public void manageAreas(ActionEvent event) throws IOException {
         MainController.loadScene("manageAreas.fxml");
     }
+
     public void showAnalytics(ActionEvent event) throws IOException {
         MainController.loadScene("analytics.fxml");
     }
@@ -79,13 +82,22 @@ public class AnalyticsController {
     public void initialize() {
         productNameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
         currentStockColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getQuantity()).asObject());
-        // Load and populate the sales chart
+
+        // Initial load of data
         loadSalesData();
-
-        // Load and populate the low stock table
         loadLowStockData();
+        loadRevenueData();
+        calculateAndDisplayTotalRevenue();
 
-        // Load and populate the revenue chart
+        // Set up the refresh timeline
+       // refreshTimeline = new Timeline(new KeyFrame(Duration.seconds(5), event -> refreshData()));
+       // refreshTimeline.setCycleCount(Timeline.INDEFINITE);
+       // refreshTimeline.play();
+    }
+
+    private void refreshData() {
+        loadSalesData();
+        loadLowStockData();
         loadRevenueData();
         calculateAndDisplayTotalRevenue();
     }
@@ -128,6 +140,7 @@ public class AnalyticsController {
         yAxis.setLowerBound(0);
         yAxis.setUpperBound(maxSales + 1);
 
+        salesChart.getData().clear();
         salesChart.getData().add(series);
     }
 
@@ -148,6 +161,7 @@ public class AnalyticsController {
     }
 
     private void loadRevenueData() {
+        revenueChart.getData().clear();
         try {
             List<Order> orders = orderDAO.getAllOrders();
             Map<String, Double> productRevenue = new HashMap<>();
@@ -181,6 +195,7 @@ public class AnalyticsController {
             e.printStackTrace();
         }
     }
+
     private void calculateAndDisplayTotalRevenue() {
         try {
             List<Order> orders = orderDAO.getAllOrders();

@@ -271,6 +271,9 @@
     -fx-background-color: black; /* Same as the ComboBox background */
     -fx-text-fill: white;
 }
+.chart-bar {
+    -fx-bar-fill: hotpink
+}
 
 
 
