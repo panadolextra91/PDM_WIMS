@@ -23,76 +23,91 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
               <!-- Sidebar without a separate fx:controller -->
-              <VBox alignment="CENTER" prefHeight="790.0" prefWidth="300" spacing="20.0" styleClass="sidebar">
-                  <stylesheets>
-                      <URL value="@styles.css" />
-                  </stylesheets>
-                  <children>
-                      <JFXButton onAction="#manageOrders" styleClass="sidebar-button" text="">
-                          <graphic>
-                              <Text text="Manage Orders">
-                                  <effect>
-                                      <DropShadow color="magenta" offsetX="2" offsetY="2" radius="5" />
-                                  </effect>
-                              </Text>
-                          </graphic>
-                      </JFXButton>
-                      <JFXButton onAction="#manageOrderItems" styleClass="sidebar-button" text="">
-                          <graphic>
-                              <Text text="Manage Order Items">
-                                  <effect>
-                                      <DropShadow color="aqua" offsetX="2" offsetY="2" radius="5" />
-                                  </effect>
-                              </Text>
-                          </graphic>
-                      </JFXButton>
-                      <JFXButton onAction="#manageCustomers" styleClass="sidebar-button" text="">
-                          <graphic>
-                              <Text text="Manage Customers">
-                                  <effect>
-                                      <DropShadow color="yellowgreen" offsetX="2" offsetY="2" radius="5" />
-                                  </effect>
-                              </Text>
-                          </graphic>
-                      </JFXButton>
-                      <JFXButton onAction="#manageProducts" styleClass="sidebar-button" text="">
-                          <graphic>
-                              <Text text="Manage Products">
-                                  <effect>
-                                      <DropShadow color="orange" offsetX="2" offsetY="2" radius="5" />
-                                  </effect>
-                              </Text>
-                          </graphic>
-                      </JFXButton>
-                      <JFXButton onAction="#manageManagers" styleClass="sidebar-button" text="">
-                          <graphic>
-                              <Text text="Manage Managers">
-                                  <effect>
-                                      <DropShadow color="deeppink" offsetX="2" offsetY="2" radius="5" />
-                                  </effect>
-                              </Text>
-                          </graphic>
-                      </JFXButton>
-                      <JFXButton onAction="#manageAreas" styleClass="sidebar-button" text="">
-                          <graphic>
-                              <Text text="Manage Areas">
-                                  <effect>
-                                      <DropShadow color="yellow" offsetX="2" offsetY="2" radius="5" />
-                                  </effect>
-                              </Text>
-                          </graphic>
-                      </JFXButton>
-                      <JFXButton onAction="#showAnalytics" styleClass="sidebar-button" text="">
-                          <graphic>
-                              <Text text="Analytics">
-                                  <effect>
-                                      <DropShadow color="#a555ec" offsetX="2" offsetY="2" radius="5" />
-                                  </effect>
-                              </Text>
-                          </graphic>
-                      </JFXButton>
-                  </children>
-              </VBox>
+             <VBox alignment="CENTER" prefHeight="790.0" prefWidth="300" spacing="20.0" styleClass="sidebar">
+                 <stylesheets>
+                     <URL value="@styles.css" />
+                 </stylesheets>
+                 <children>
+                     <JFXButton onAction="#manageOrders"  styleClass="sidebar-button" text="">
+                         <graphic>
+                             <Text text="Manage Orders">
+                                 <effect>
+                                     <DropShadow color="magenta" offsetX="2" offsetY="2" radius="5" />
+                                 </effect>
+                             </Text>
+                         </graphic>
+                     </JFXButton>
+                     <JFXButton onAction="#manageOrderItems"  styleClass="sidebar-button" text="">
+                         <graphic>
+                             <Text text="Manage Order Items">
+                                 <effect>
+                                     <DropShadow color="aqua" offsetX="2" offsetY="2" radius="5" />
+                                 </effect>
+                             </Text>
+                         </graphic>
+                     </JFXButton>
+                     <JFXButton onAction="#manageCustomers"  styleClass="sidebar-button" text="">
+                         <graphic>
+                             <Text text="Manage Customers">
+                                 <effect>
+                                     <DropShadow color="yellowgreen" offsetX="2" offsetY="2" radius="5" />
+                                 </effect>
+                             </Text>
+                         </graphic>
+                     </JFXButton>
+                     <JFXButton onAction="#manageProducts"  styleClass="sidebar-button" text="">
+                         <graphic>
+                             <Text text="Manage Products">
+                                 <effect>
+                                     <DropShadow color="orange" offsetX="2" offsetY="2" radius="5" />
+                                 </effect>
+                             </Text>
+                         </graphic>
+                     </JFXButton>
+                     <JFXButton onAction="#manageManagers"  styleClass="sidebar-button" text="">
+                         <graphic>
+                             <Text text="Manage Managers">
+                                 <effect>
+                                     <DropShadow color="deeppink" offsetX="2" offsetY="2" radius="5" />
+                                 </effect>
+                             </Text>
+                         </graphic>
+                     </JFXButton>
+                     <JFXButton onAction="#manageAreas"  styleClass="sidebar-button" text="">
+                         <graphic>
+                             <Text text="Manage Areas">
+                                 <effect>
+                                     <DropShadow color="yellow" offsetX="2" offsetY="2" radius="5" />
+                                 </effect>
+                             </Text>
+                         </graphic>
+                     </JFXButton>
+                     <JFXButton onAction="#showAnalytics" styleClass="sidebar-button" text="">
+                         <graphic>
+                             <Text text="Analytics">
+                                 <effect>
+                                     <DropShadow color="#a555ec" offsetX="2" offsetY="2" radius="5" />
+                                 </effect>
+                             </Text>
+                         </graphic>
+                     </JFXButton>
+                 </children>
+                 <HBox prefHeight="14.0" prefWidth="235.0">
+                     <children>
+                         <Button cancelButton="true" mnemonicParsing="false" style="-fx-background-color: orange; -fx-background-radius: 50;">
+                             <graphic>
+                                 <!-- Avatar Text Node -->
+                                 <Text fill="WHITE" style="-fx-font-size: 35; -fx-font-family: Impact; -fx-padding: 20;" text="AD" />
+                             </graphic>
+                         </Button>
+                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Impact; -fx-font-size: 20pt;" styleClass="sidebar-button" text="Welcome, Admin" textAlignment="CENTER" wrappingWidth="203.21630859375">
+                             <HBox.margin>
+                                 <Insets top="10.0" />
+                             </HBox.margin>
+                         </Text>
+                     </children>
+                 </HBox>
+             </VBox>
          </children>
       </AnchorPane>
         <!-- Main content area controlled by ManageManagersController -->

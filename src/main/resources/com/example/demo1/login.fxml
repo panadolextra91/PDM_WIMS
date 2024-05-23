@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -8,7 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Text?>
-<?import java.net.URL?>
 
 <AnchorPane prefHeight="473.0" prefWidth="673.0" styleClass="root-pane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.LoginController">
    <stylesheets>
@@ -21,19 +22,18 @@
          </image>
       </ImageView>
       <TextField fx:id="usernameField" layoutX="408.0" layoutY="203.0" prefHeight="26.0" prefWidth="224.0" style="-fx-text-fill: white; -fx-background-color: #212121;" />
-      <TextField fx:id="passwordField" layoutX="408.0" layoutY="246.0" prefHeight="26.0" prefWidth="224.0" style="-fx-background-color: #212121; -fx-text-fill: white;" />
-      <Text layoutX="346.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-label" text="Sign In">
+      <Text layoutX="346.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-label" text="SIGN IN">
          <effect>
             <DropShadow blurType="GAUSSIAN" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
                <color>
-                  <Color red="1.0" green="0.4117647111415863" blue="0.7058823704719543" />
+                  <Color red="0.6784313917160034" green="1.0" blue="0.18431372940540314" />
                </color>
             </DropShadow>
          </effect>
       </Text>
       <Text fill="WHITE" layoutX="295.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15pt; -fx-font-family: Impact;" text="User Name" />
       <Text fill="WHITE" layoutX="295.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15pt; -fx-font-family: Impact;" text="Password" />
-      <JFXButton layoutX="433.0" layoutY="312.0" styleClass="add-button" text="" onMouseClicked="#handleLogin">
+      <JFXButton layoutX="433.0" layoutY="312.0" onMouseClicked="#handleLogin" styleClass="add-button" text="">
          <graphic>
             <Text styleClass="button-text" text="Login">
                <effect>
@@ -46,5 +46,12 @@
             </Text>
          </graphic>
       </JFXButton>
+      <PasswordField fx:id="passwordField" layoutX="408.0" layoutY="245.0" prefHeight="26.0" prefWidth="224.0" style="-fx-background-color: #212121; -fx-text-fill: white;" />
+      <TextField fx:id="passwordTextField" layoutX="408.0" layoutY="245.0" prefHeight="26.0" prefWidth="224.0" style="-fx-background-color: #212121; -fx-text-fill: white;" visible="false" />
+      <ImageView fx:id="eyeIcon" fitHeight="26.0" fitWidth="26.0" layoutX="600.0" layoutY="246.0" onMouseClicked="#togglePasswordVisibility" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/images/eye.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

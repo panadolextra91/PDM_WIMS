@@ -28,7 +28,7 @@
                         <URL value="@styles.css" />
                     </stylesheets>
                     <children>
-                        <JFXButton onAction="#manageOrders" styleClass="sidebar-button" text="">
+                        <JFXButton onAction="#manageOrders"  styleClass="sidebar-button" text="">
                             <graphic>
                                 <Text text="Manage Orders">
                                     <effect>
@@ -37,7 +37,7 @@
                                 </Text>
                             </graphic>
                         </JFXButton>
-                        <JFXButton onAction="#manageOrderItems" styleClass="sidebar-button" text="">
+                        <JFXButton onAction="#manageOrderItems"  styleClass="sidebar-button" text="">
                             <graphic>
                                 <Text text="Manage Order Items">
                                     <effect>
@@ -46,7 +46,7 @@
                                 </Text>
                             </graphic>
                         </JFXButton>
-                        <JFXButton onAction="#manageCustomers" styleClass="sidebar-button" text="">
+                        <JFXButton onAction="#manageCustomers"  styleClass="sidebar-button" text="">
                             <graphic>
                                 <Text text="Manage Customers">
                                     <effect>
@@ -55,7 +55,7 @@
                                 </Text>
                             </graphic>
                         </JFXButton>
-                        <JFXButton onAction="#manageProducts" styleClass="sidebar-button" text="">
+                        <JFXButton onAction="#manageProducts"  styleClass="sidebar-button" text="">
                             <graphic>
                                 <Text text="Manage Products">
                                     <effect>
@@ -64,7 +64,7 @@
                                 </Text>
                             </graphic>
                         </JFXButton>
-                        <JFXButton onAction="#manageManagers" styleClass="sidebar-button" text="">
+                        <JFXButton onAction="#manageManagers"  styleClass="sidebar-button" text="">
                             <graphic>
                                 <Text text="Manage Managers">
                                     <effect>
@@ -73,7 +73,7 @@
                                 </Text>
                             </graphic>
                         </JFXButton>
-                        <JFXButton onAction="#manageAreas" styleClass="sidebar-button" text="">
+                        <JFXButton onAction="#manageAreas"  styleClass="sidebar-button" text="">
                             <graphic>
                                 <Text text="Manage Areas">
                                     <effect>
@@ -92,6 +92,21 @@
                             </graphic>
                         </JFXButton>
                     </children>
+                    <HBox prefHeight="14.0" prefWidth="235.0">
+                        <children>
+                            <Button cancelButton="true" mnemonicParsing="false" style="-fx-background-color: orange; -fx-background-radius: 50;">
+                                <graphic>
+                                    <!-- Avatar Text Node -->
+                                    <Text fill="WHITE" style="-fx-font-size: 35; -fx-font-family: Impact; -fx-padding: 20;" text="AD" />
+                                </graphic>
+                            </Button>
+                            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Impact; -fx-font-size: 20pt;" styleClass="sidebar-button" text="Welcome, Admin" textAlignment="CENTER" wrappingWidth="203.21630859375">
+                                <HBox.margin>
+                                    <Insets top="10.0" />
+                                </HBox.margin>
+                            </Text>
+                        </children>
+                    </HBox>
                 </VBox>
             </children>
         </AnchorPane>

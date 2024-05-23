@@ -1,8 +1,9 @@
 package com.example.demo1;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -12,7 +13,13 @@ public class LoginController {
     private TextField usernameField;
 
     @FXML
-    private TextField passwordField;
+    private PasswordField passwordField;
+
+    @FXML
+    private TextField passwordTextField;
+    @FXML
+    private ImageView eyeIcon;
+    private boolean isPasswordVisible = false;
 
     @FXML
     protected void handleLogin(MouseEvent event) {
@@ -33,6 +40,23 @@ public class LoginController {
             }
         } else {
             showErrorAlert("User name or password is incorrect.");
+        }
+    }
+
+    @FXML
+    protected void togglePasswordVisibility(MouseEvent event) {
+        if (isPasswordVisible) {
+            passwordField.setText(passwordTextField.getText());
+            passwordField.setVisible(true);
+            passwordTextField.setVisible(false);
+            eyeIcon.setImage(new Image(getClass().getResourceAsStream("/images/eye.png")));
+            isPasswordVisible = false;
+        } else {
+            passwordTextField.setText(passwordField.getText());
+            passwordTextField.setVisible(true);
+            passwordField.setVisible(false);
+            eyeIcon.setImage(new Image(getClass().getResourceAsStream("/images/eye-white.png")));
+            isPasswordVisible = true;
         }
     }
 
