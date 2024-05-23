@@ -4,15 +4,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+import javafx.util.Callback;
 
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -28,7 +25,7 @@ public class AddOrderItemController {
     private OrderItemDAO orderItemDAO = new OrderItemDAO();
     private int orderId;
     @FXML
-    private ComboBox<String> productNameComboBox;
+    private ComboBox<Product> productNameComboBox;
     private OrderDAO orderDAO = new OrderDAO();
 
     private ProductDAO productDAO = new ProductDAO();
@@ -46,41 +43,49 @@ public class AddOrderItemController {
     private void loadProductNames() {
         try {
             List<Product> products = productDAO.getAllProducts();
-            ObservableList<String> productNames = FXCollections.observableArrayList();
-            for (Product product : products) {
-                productNames.add(product.getName());
-            }
+            ObservableList<Product> productNames = FXCollections.observableArrayList(products);
             productNameComboBox.setItems(productNames);
+
+            productNameComboBox.setCellFactory(new Callback<ListView<Product>, ListCell<Product>>() {
+                @Override
+                public ListCell<Product> call(ListView<Product> param) {
+                    return new ListCell<Product>() {
+                        @Override
+                        protected void updateItem(Product item, boolean empty) {
+                            super.updateItem(item, empty);
+                            if (item == null || empty) {
+                                setText(null);
+                                setDisable(false);
+                            } else {
+                                setText(item.getName() + " (Qty: " + item.getQuantity() + ")");
+                                setDisable(item.getQuantity() == 0);
+                            }
+                        }
+                    };
+                }
+            });
+
+            productNameComboBox.setButtonCell(new ListCell<Product>() {
+                @Override
+                protected void updateItem(Product item, boolean empty) {
+                    super.updateItem(item, empty);
+                    if (empty || item == null) {
+                        setText(null);
+                    } else {
+                        setText(item.getName() + " (Qty: " + item.getQuantity() + ")");
+                    }
+                }
+            });
 
             // Add listener to ComboBox selection change
             productNameComboBox.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
                 if (newValue != null) {
-                    try {
-                        Product selectedProduct = productDAO.getProductByName(newValue);
-                        productIdField.setText(String.valueOf(selectedProduct.getId()));
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
+                    productIdField.setText(String.valueOf(newValue.getId()));
                 }
             });
 
         } catch (SQLException e) {
             e.printStackTrace();
-        }
-    }
-
-    @FXML
-    private void handleProductSelection() {
-        String selectedProductName = productNameComboBox.getSelectionModel().getSelectedItem();
-        if (selectedProductName != null) {
-            try {
-                Product selectedProduct = productDAO.getProductByName(selectedProductName);
-                if (selectedProduct != null) {
-                    productIdField.setText(String.valueOf(selectedProduct.getId()));
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
     }
 
@@ -114,7 +119,6 @@ public class AddOrderItemController {
             e.printStackTrace();
         }
     }
-
 
     @FXML
     private void handleCancel(ActionEvent event) {

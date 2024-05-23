@@ -17,7 +17,7 @@
     </stylesheets>
     <children>
         <Label layoutX="479.0" layoutY="216.0" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Product Name:" />
-        <ComboBox fx:id="productNameComboBox" layoutX="679.0" layoutY="216.0" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
+        <ComboBox fx:id="productNameComboBox" layoutX="679.0" layoutY="216.0" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" styleClass="custom-combo-box"/>
 
         <Label layoutX="479.0" layoutY="266.0" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Order Item ID:" />
         <TextField fx:id="orderItemIdField" layoutX="679.0" layoutY="266.0" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />

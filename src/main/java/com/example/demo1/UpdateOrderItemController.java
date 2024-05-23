@@ -9,8 +9,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -26,7 +29,7 @@ public class UpdateOrderItemController {
     @FXML
     private TextField quantityField;
     @FXML
-    private ComboBox<String> productNameComboBox;
+    private ComboBox<Product> productNameComboBox;
     private ProductDAO productDAO = new ProductDAO();
 
     private OrderItemDAO orderItemDAO = new OrderItemDAO();
@@ -37,21 +40,44 @@ public class UpdateOrderItemController {
     private void loadProductNames() {
         try {
             List<Product> products = productDAO.getAllProducts();
-            ObservableList<String> productNames = FXCollections.observableArrayList();
-            for (Product product : products) {
-                productNames.add(product.getName());
-            }
+            ObservableList<Product> productNames = FXCollections.observableArrayList(products);
             productNameComboBox.setItems(productNames);
+
+            productNameComboBox.setCellFactory(new Callback<ListView<Product>, ListCell<Product>>() {
+                @Override
+                public ListCell<Product> call(ListView<Product> param) {
+                    return new ListCell<Product>() {
+                        @Override
+                        protected void updateItem(Product item, boolean empty) {
+                            super.updateItem(item, empty);
+                            if (item == null || empty) {
+                                setText(null);
+                                setDisable(false);
+                            } else {
+                                setText(item.getName() + " (Qty: " + item.getQuantity() + ")");
+                                setDisable(item.getQuantity() == 0);
+                            }
+                        }
+                    };
+                }
+            });
+
+            productNameComboBox.setButtonCell(new ListCell<Product>() {
+                @Override
+                protected void updateItem(Product item, boolean empty) {
+                    super.updateItem(item, empty);
+                    if (empty || item == null) {
+                        setText(null);
+                    } else {
+                        setText(item.getName() + " (Qty: " + item.getQuantity() + ")");
+                    }
+                }
+            });
 
             // Add listener to ComboBox selection change
             productNameComboBox.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
                 if (newValue != null) {
-                    try {
-                        Product selectedProduct = productDAO.getProductByName(newValue);
-                        productIdField.setText(String.valueOf(selectedProduct.getId()));
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
+                    productIdField.setText(String.valueOf(newValue.getId()));
                 }
             });
 
