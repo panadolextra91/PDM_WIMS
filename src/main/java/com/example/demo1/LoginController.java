@@ -49,7 +49,7 @@ public class LoginController {
             passwordField.setText(passwordTextField.getText());
             passwordField.setVisible(true);
             passwordTextField.setVisible(false);
-            eyeIcon.setImage(new Image(getClass().getResourceAsStream("/images/eye.png")));
+            eyeIcon.setImage(new Image(getClass().getResourceAsStream("/images/eye2.png")));
             isPasswordVisible = false;
         } else {
             passwordTextField.setText(passwordField.getText());
