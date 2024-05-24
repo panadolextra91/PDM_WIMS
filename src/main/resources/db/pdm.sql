@@ -162,8 +162,11 @@ CREATE TABLE `products` (
   `name` varchar(255) NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `quantity` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `area_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `products_fk_area` (`area_id`),
+  CONSTRAINT `products_fk_area` FOREIGN KEY (`area_id`) REFERENCES `areas` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -172,7 +175,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (2,'Carpenter tool kit',100.00,8),(3,'Screwdriver',25.00,1),(4,'Wood panel',400.00,21),(5,'Wood table',200.00,6),(6,'Canned beans',24.00,8),(7,'Canned peaches',40.00,20),(8,'Fabric',30.00,10),(9,'Expensive wool',90.00,6),(10,'Cheap wool',45.00,24),(11,'Samsung TV controller',30.00,44),(12,'Plumber tool kit',100.00,10),(13,'Soy sauce',12.00,100),(14,'Fish sauce',12.00,100),(15,'Fancy cup',55.00,50),(16,'Air conditioner controller',150.00,0);
+INSERT INTO `products` VALUES (2,'Carpenter tool kit',100.00,8,1),(3,'Screwdriver',25.00,1,2),(4,'Wood panel',400.00,21,3),(5,'Wood table',200.00,6,4),(6,'Canned beans',24.00,8,1),(7,'Canned peaches',40.00,20,2),(8,'Fabric',30.00,10,3),(9,'Expensive wool',90.00,6,4),(10,'Cheap wool',45.00,24,1),(11,'Samsung TV controller',30.00,44,2),(12,'Plumber tool kit',100.00,10,3),(13,'Soy sauce',12.00,100,4),(14,'Fish sauce',12.00,100,1),(15,'Fancy cup',55.00,50,2),(16,'Air conditioner controller',150.00,0,3),(17,'Heating pad',25.00,30,4);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -185,4 +188,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-23 14:07:16
+-- Dump completed on 2024-05-24 13:06:21
