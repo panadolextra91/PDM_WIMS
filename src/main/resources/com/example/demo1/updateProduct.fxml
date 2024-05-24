@@ -28,7 +28,7 @@
         <TextField fx:id="quantityField" layoutX="682.0" layoutY="427.0" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
 
         <Label layoutX="482.0" layoutY="477.0" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Area:" />
-        <ComboBox fx:id="areaComboBox" layoutX="682.0" layoutY="477.0" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
+        <ComboBox fx:id="areaComboBox" layoutX="682.0" layoutY="477.0" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" styleClass="custom-combo-box"/>
 
         <JFXButton layoutX="670.0" layoutY="530.0" onAction="#handleUpdateProduct" styleClass="update-button" text="">
             <graphic>
