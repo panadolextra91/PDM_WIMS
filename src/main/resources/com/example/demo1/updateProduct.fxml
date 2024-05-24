@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import java.net.URL?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
@@ -26,7 +27,10 @@
         <Label layoutX="482.0" layoutY="427.0" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Quantity:" />
         <TextField fx:id="quantityField" layoutX="682.0" layoutY="427.0" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
 
-        <JFXButton layoutX="670.0" layoutY="478.0" onAction="#handleUpdateProduct" styleClass="update-button" text="">
+        <Label layoutX="482.0" layoutY="477.0" style="-fx-text-fill: white; -fx-font-size: 24pt; -fx-font-weight: bold; -fx-font-family: 'Impact';" text="Area:" />
+        <ComboBox fx:id="areaComboBox" layoutX="682.0" layoutY="477.0" prefWidth="400" style="-fx-background-color: #212121; -fx-text-fill: white; -fx-font-size: 15pt;" />
+
+        <JFXButton layoutX="670.0" layoutY="530.0" onAction="#handleUpdateProduct" styleClass="update-button" text="">
             <graphic>
                 <Text styleClass="button-text" text="Update">
                     <effect>
@@ -39,7 +43,7 @@
             </graphic>
         </JFXButton>
 
-        <JFXButton layoutX="1003.0" layoutY="478.0" onAction="#handleCancel" styleClass="back-button" text="">
+        <JFXButton layoutX="1003.0" layoutY="530.0" onAction="#handleCancel" styleClass="back-button" text="">
             <graphic>
                 <Text styleClass="button-text" text="Cancel">
                     <effect>

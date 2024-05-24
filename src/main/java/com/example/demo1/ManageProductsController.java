@@ -3,14 +3,12 @@ package com.example.demo1;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -30,9 +28,12 @@ public class ManageProductsController {
     @FXML
     private TableColumn<Product, Integer> quantityColumn;
     @FXML
+    private TableColumn<Product, Integer> areaIdColumn; // New column for area_id
+    @FXML
     private TextField searchField;
 
     private ProductDAO productDAO = new ProductDAO();
+
     public void manageOrders(ActionEvent event) throws IOException {
         MainController.loadScene("manageOrders.fxml");
     }
@@ -56,6 +57,7 @@ public class ManageProductsController {
     public void manageAreas(ActionEvent event) throws IOException {
         MainController.loadScene("manageAreas.fxml");
     }
+
     public void showAnalytics(ActionEvent event) throws IOException {
         MainController.loadScene("analytics.fxml");
     }
@@ -66,6 +68,7 @@ public class ManageProductsController {
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        areaIdColumn.setCellValueFactory(new PropertyValueFactory<>("areaId")); // Set cell value factory for area_id
         loadProducts();
     }
 

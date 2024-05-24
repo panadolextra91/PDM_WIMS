@@ -133,6 +133,7 @@
                                 <TableColumn fx:id="nameColumn" style="-fx-text-fill: white" text="Name" />
                                 <TableColumn fx:id="priceColumn" style="-fx-text-fill: white" text="Price" />
                                 <TableColumn fx:id="quantityColumn" style="-fx-text-fill: white" text="Quantity" />
+                                <TableColumn fx:id="areaIdColumn" style="-fx-text-fill: white" text="Area ID"/>
                             </columns>
                         </TableView>
                         <Button onAction="#addProduct" styleClass="add-button">

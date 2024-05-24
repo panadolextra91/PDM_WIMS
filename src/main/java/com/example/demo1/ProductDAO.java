@@ -6,12 +6,13 @@ import java.util.List;
 
 public class ProductDAO {
     public int addProduct(Product product) throws SQLException {
-        String query = "INSERT INTO products (name, price, quantity) VALUES (?, ?, ?)";
+        String query = "INSERT INTO products (name, price, quantity, area_id) VALUES (?, ?, ?, ?)"; // Add area_id here
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS)) {
             preparedStatement.setString(1, product.getName());
             preparedStatement.setDouble(2, product.getPrice());
             preparedStatement.setInt(3, product.getQuantity());
+            preparedStatement.setInt(4, product.getAreaId()); // Add this line
             preparedStatement.executeUpdate();
 
             // Retrieve the generated ID
@@ -35,12 +36,14 @@ public class ProductDAO {
                         resultSet.getInt("id"),
                         resultSet.getString("name"),
                         resultSet.getDouble("price"),
-                        resultSet.getInt("quantity")
+                        resultSet.getInt("quantity"),
+                        resultSet.getInt("area_id") // Add this line
                 );
             }
             return null;
         }
     }
+
     public Product getProductByName(String name) throws SQLException {
         String query = "SELECT * FROM products WHERE name = ?";
         try (Connection connection = DatabaseConnection.getConnection();
@@ -52,12 +55,14 @@ public class ProductDAO {
                         resultSet.getInt("id"),
                         resultSet.getString("name"),
                         resultSet.getDouble("price"),
-                        resultSet.getInt("quantity")
+                        resultSet.getInt("quantity"),
+                        resultSet.getInt("area_id") // Add this line
                 );
             }
             return null;
         }
     }
+
     public List<Product> getAllProducts() throws SQLException {
         List<Product> products = new ArrayList<>();
         String query = "SELECT * FROM products";
@@ -69,7 +74,8 @@ public class ProductDAO {
                         resultSet.getInt("id"),
                         resultSet.getString("name"),
                         resultSet.getDouble("price"),
-                        resultSet.getInt("quantity")
+                        resultSet.getInt("quantity"),
+                        resultSet.getInt("area_id") // Add this line
                 ));
             }
         }
@@ -77,13 +83,14 @@ public class ProductDAO {
     }
 
     public void updateProduct(Product product) throws SQLException {
-        String query = "UPDATE products SET name = ?, price = ?, quantity = ? WHERE id = ?";
+        String query = "UPDATE products SET name = ?, price = ?, quantity = ?, area_id = ? WHERE id = ?"; // Add area_id here
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, product.getName());
             statement.setDouble(2, product.getPrice());
             statement.setInt(3, product.getQuantity());
-            statement.setInt(4, product.getId());
+            statement.setInt(4, product.getAreaId()); // Add this line
+            statement.setInt(5, product.getId());
             statement.executeUpdate();
         }
     }

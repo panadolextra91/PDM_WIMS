@@ -34,4 +34,9 @@ public class Area {
     public void setManagerId(int managerId) {
         this.managerId = managerId;
     }
+
+    @Override
+    public String toString() {
+        return name; // Return the name of the area
+    }
 }
