@@ -7,7 +7,7 @@ The Warehouse Management System (WMS) application is a JavaFX-based solution des
 ## Members and Roles
 
 - [**Huỳnh Ngọc Anh Thư - ITCSIU21034:**](https://github.com/panadolextr91) Developer, Database, Report, Slides.
-- [**Nguyễn Minh Đạt - ITDSIU22166:**](https://github.com/29Schiller) Database, Report, Slides.
+- [**Nguyễn Minh Đạt - ITDSIU22166:**](https://github.com/29Schiller) Leader, Database, Report, Slides.
 - [**Nguyễn Lập Thuận - ITCSIU22279:**](https://github.com/HoangDeBongDem) Report, Slides.
 - [**Phạm Hoài Nhật Nam - ITDSIU22143:**](https://github.com/jonathandanghokcode) Report, Slides.
 - [**Lê Trọng Hiếu - ITDSIU22127:**](https://github.com/thhieu29) Report, Slides.
