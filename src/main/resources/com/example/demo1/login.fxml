@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import java.net.URL?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
@@ -18,11 +19,11 @@
    <children>
       <ImageView fitHeight="473.0" fitWidth="277.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@/images/login.jpeg" />
+            <Image url="@../../../images/login.jpeg" />
          </image>
       </ImageView>
       <TextField fx:id="usernameField" layoutX="408.0" layoutY="203.0" prefHeight="26.0" prefWidth="224.0" style="-fx-text-fill: white; -fx-background-color: #212121;" />
-      <Text layoutX="346.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-label" text="SIGN IN">
+      <Text layoutX="376.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-label" text="SIGN IN">
          <effect>
             <DropShadow blurType="GAUSSIAN" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
                <color>
@@ -43,14 +44,20 @@
                      </color>
                   </DropShadow>
                </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Text>
          </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <PasswordField fx:id="passwordField" layoutX="408.0" layoutY="245.0" prefHeight="26.0" prefWidth="224.0" style="-fx-background-color: #212121; -fx-text-fill: white;" />
       <TextField fx:id="passwordTextField" layoutX="408.0" layoutY="245.0" prefHeight="26.0" prefWidth="224.0" style="-fx-background-color: #212121; -fx-text-fill: white;" visible="false" />
-      <ImageView fx:id="eyeIcon" fitHeight="26.0" fitWidth="26.0" layoutX="600.0" layoutY="246.0" onMouseClicked="#togglePasswordVisibility" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="eyeIcon" fitHeight="23.0" fitWidth="20.0" layoutX="606.0" layoutY="248.0" onMouseClicked="#togglePasswordVisibility" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@/images/eye2.png" />
+            <Image url="@../../../images/eye2.png" />
          </image>
       </ImageView>
    </children>

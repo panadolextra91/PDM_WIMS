@@ -18,7 +18,7 @@
         <URL value="@styles.css" />
     </stylesheets>
     <children>
-        <Label layoutX="442.0" layoutY="188.0" prefHeight="118.0" prefWidth="568.0" style="-fx-text-fill: black;" stylesheets="@styles.css" text="MAIN MENU">
+        <Label alignment="CENTER" layoutX="442.0" layoutY="188.0" prefHeight="118.0" prefWidth="568.0" style="-fx-text-fill: black;" stylesheets="@styles.css" text="MAIN MENU">
          <effect>
             <DropShadow blurType="GAUSSIAN" height="15.0" radius="7.0" spread="0.65" width="15.0">
                <color>
@@ -27,17 +27,17 @@
             </DropShadow>
          </effect>
          <font>
-            <Font name="Optima Bold" size="96.0" />
+            <Font name="Impact" size="120" />
          </font></Label>
         <VBox alignment="CENTER" layoutX="391.0" layoutY="394.0" spacing="25.0">
             <children>
-                <JFXButton onAction="#manageOrders" ripplerFill="#1a1a1a" prefHeight="61.0" prefWidth="254.0" styleClass="delete-button" stylesheets="@styles.css" text="">
+                <JFXButton onAction="#manageOrders" prefHeight="61.0" prefWidth="254.0" ripplerFill="#1a1a1a" styleClass="delete-button" stylesheets="@styles.css" text="">
                     <graphic>
                         <VBox alignment="CENTER_LEFT">
                             <HBox>
                                 <ImageView fx:id="icon" fitHeight="36.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
                                     <image>
-                                        <Image url="@/images/dolly-flatbed-alt (1).png" />
+                                        <Image url="@../../../images/dolly-flatbed-alt (1).png" />
                                     </image>
                                     <effect>
                                         <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
@@ -67,7 +67,7 @@
                         </DropShadow>
                     </effect>
                 </JFXButton>
-                <JFXButton onAction="#manageOrderItems" ripplerFill="#1a1a1a" prefHeight="61.0" prefWidth="237.0" styleClass="update-button" stylesheets="@styles.css" text="">
+                <JFXButton onAction="#manageOrderItems" prefHeight="61.0" prefWidth="237.0" ripplerFill="#1a1a1a" styleClass="update-button" stylesheets="@styles.css" text="">
                     <graphic>
                         <VBox alignment="CENTER_LEFT">
                             <children>
@@ -75,7 +75,7 @@
                                     <children>
                                         <ImageView fx:id="icon1" fitHeight="36.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
                                             <image>
-                                                <Image url="@/images/picking-box.png" />
+                                                <Image url="@../../../images/picking-box.png" />
                                             </image>
                                             <effect>
                                                 <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
@@ -107,7 +107,7 @@
                         </DropShadow>
                     </effect>
                 </JFXButton>
-                <JFXButton onAction="#manageCustomers" ripplerFill="#1a1a1a" prefHeight="61.0" prefWidth="253.0" styleClass="add-button" stylesheets="@styles.css" text="">
+                <JFXButton onAction="#manageCustomers" prefHeight="61.0" prefWidth="253.0" ripplerFill="#1a1a1a" styleClass="add-button" stylesheets="@styles.css" text="">
                     <graphic>
                         <VBox alignment="CENTER_LEFT">
                             <children>
@@ -115,7 +115,7 @@
                                     <children>
                                         <ImageView fx:id="icon2" fitHeight="36.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
                                             <image>
-                                                <Image url="@/images/user-salary.png" />
+                                                <Image url="@../../../images/user-salary.png" />
                                             </image>
                                             <effect>
                                                 <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
@@ -147,7 +147,7 @@
                         </DropShadow>
                     </effect>
                 </JFXButton>
-                <JFXButton onAction="#manageProducts" ripplerFill="#1a1a1a" prefHeight="61.0" prefWidth="251.0" styleClass="orange-button" stylesheets="@styles.css" text="">
+                <JFXButton onAction="#manageProducts" prefHeight="61.0" prefWidth="251.0" ripplerFill="#1a1a1a" styleClass="orange-button" stylesheets="@styles.css" text="">
                     <graphic>
                         <VBox alignment="CENTER_LEFT">
                             <children>
@@ -155,7 +155,7 @@
                                     <children>
                                         <ImageView fx:id="icon3" fitHeight="36.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
                                             <image>
-                                                <Image url="@/images/box-dollar.png" />
+                                                <Image url="@../../../images/box-dollar.png" />
                                             </image>
                                             <effect>
                                                 <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
@@ -191,7 +191,7 @@
         </VBox>
         <VBox alignment="CENTER" layoutX="823.0" layoutY="394.0" spacing="25.0">
             <children>
-                <JFXButton onAction="#manageManagers" ripplerFill="#1a1a1a" prefHeight="61.0" prefWidth="182.0" styleClass="pink-button" stylesheets="@styles.css" text="">
+                <JFXButton onAction="#manageManagers" prefHeight="61.0" prefWidth="182.0" ripplerFill="#1a1a1a" styleClass="pink-button" stylesheets="@styles.css" text="">
                     <graphic>
                         <VBox alignment="CENTER_LEFT">
                             <children>
@@ -199,7 +199,7 @@
                                     <children>
                                         <ImageView fx:id="icon4" fitHeight="36.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
                                             <image>
-                                                <Image url="@/images/admin-alt.png" />
+                                                <Image url="@../../../images/admin-alt.png" />
                                             </image>
                                             <effect>
                                                 <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.78" width="15.0">
@@ -231,7 +231,7 @@
                         </DropShadow>
                     </effect>
                 </JFXButton>
-                <JFXButton onAction="#manageAreas" ripplerFill="#1a1a1a" prefHeight="61.0" prefWidth="233.0" styleClass="yellow-button" stylesheets="@styles.css" text="">
+                <JFXButton onAction="#manageAreas" prefHeight="61.0" prefWidth="233.0" ripplerFill="#1a1a1a" styleClass="yellow-button" stylesheets="@styles.css" text="">
                     <graphic>
                         <VBox alignment="CENTER_LEFT">
                             <children>
@@ -239,7 +239,7 @@
                                     <children>
                                         <ImageView fx:id="icon41" fitHeight="36.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
                                             <image>
-                                                <Image url="@/images/warehouse-alt.png" />
+                                                <Image url="@../../../images/warehouse-alt.png" />
                                             </image>
                                             <effect>
                                                 <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.78" width="15.0">
@@ -271,7 +271,7 @@
                         </DropShadow>
                     </effect>
                 </JFXButton>
-                <JFXButton onAction="#showAnalytics" ripplerFill="#1a1a1a" prefHeight="61.0" prefWidth="234.0"  styleClass="purple-button" stylesheets="@styles.css" text="">
+                <JFXButton onAction="#showAnalytics" prefHeight="61.0" prefWidth="234.0" ripplerFill="#1a1a1a" styleClass="purple-button" stylesheets="@styles.css" text="">
                     <graphic>
                         <VBox alignment="CENTER_LEFT">
                             <children>
@@ -279,7 +279,7 @@
                                     <children>
                                         <ImageView fx:id="icon411" fitHeight="36.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
                                             <image>
-                                                <Image url="@/images/file-spreadsheet.png" />
+                                                <Image url="@../../../images/file-spreadsheet.png" />
                                             </image>
                                             <effect>
                                                 <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.78" width="15.0">
@@ -319,7 +319,7 @@
                                     <children>
                                         <ImageView fx:id="icon4111" fitHeight="43.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" styleClass="icon">
                                             <image>
-                                                <Image url="@/images/angle-small-left.png" />
+                                                <Image url="@../../../images/angle-small-left.png" />
                                             </image>
                                             <effect>
                                                 <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.78" width="15.0">

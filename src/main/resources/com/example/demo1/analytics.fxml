@@ -7,26 +7,30 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Text?>
 
-<HBox prefHeight="821.0" prefWidth="1500.0" style="-fx-background-color: #1a1a1a" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.AnalyticsController">
+<HBox prefHeight="821.0" prefWidth="1450.0" style="-fx-background-color: #1a1a1a" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.AnalyticsController">
     <stylesheets>
         <URL value="@styles.css" />
     </stylesheets>
     <children>
         <!-- Sidebar wrapped in an AnchorPane for fixed positioning -->
-        <AnchorPane prefHeight="1002.0" prefWidth="300">
+        <AnchorPane prefHeight="200.0" prefWidth="200.0">
             <children>
-                <VBox alignment="CENTER" prefHeight="790.0" prefWidth="300" spacing="20.0" styleClass="sidebar">
+                <!-- Sidebar without a separate fx:controller -->
+                <VBox fx:id="sidebar" alignment="CENTER" prefHeight="790.0" prefWidth="300" spacing="20.0" styleClass="sidebar" visible="false">
                     <stylesheets>
                         <URL value="@styles.css" />
                     </stylesheets>
@@ -94,15 +98,46 @@
                                 </Text>
                             </graphic>
                         </JFXButton>
+                        <HBox prefHeight="14.0" prefWidth="235.0">
+                            <children>
+                                <Button cancelButton="true" mnemonicParsing="false" style="-fx-background-color: orange; -fx-background-radius: 50;">
+                                    <graphic>
+                                        <Text fill="WHITE" style="-fx-font-size: 35; -fx-font-family: Impact; -fx-padding: 20;" text="AD" />
+                                    </graphic>
+                                </Button>
+                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Impact; -fx-font-size: 20pt;" styleClass="sidebar-button" text="Welcome, Admin" textAlignment="CENTER" wrappingWidth="203.21630859375">
+                                    <HBox.margin>
+                                        <Insets top="10.0" />
+                                    </HBox.margin>
+                                </Text>
+                            </children>
+                        </HBox>
                     </children>
                 </VBox>
+                <!-- Menu Button -->
+                <Button onAction="#toggleSidebar" style="-fx-background-color: transparent;">
+                    <graphic>
+                        <ImageView fitHeight="30" fitWidth="30" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../images/menu-burger.png" />
+                            </image>
+                            <effect>
+                                <DropShadow blurType="ONE_PASS_BOX" height="15.0" offsetX="1.0" offsetY="1.0" radius="7.0" spread="0.65" width="15.0">
+                                    <color>
+                                        <Color red="1.0" green="0.4117647111415863" blue="0.7058823704719543" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                        </ImageView>
+                    </graphic>
+                </Button>
             </children>
         </AnchorPane>
-        <ScrollPane fitToWidth="true" prefHeight="850.0" prefWidth="1142.0" style="-fx-background-color: #1a1a1a" styleClass="scroll-pane">
+        <ScrollPane fx:id="contentPane" fitToWidth="true" prefHeight="850.0" prefWidth="1142.0" style="-fx-background-color: #1a1a1a" styleClass="scroll-pane">
             <content>
-                <VBox fx:id="contentVBox" alignment="CENTER" prefHeight="1193.0" prefWidth="1126.0" spacing="10" style="-fx-background-color: #1a1a1a">
+                <VBox fx:id="contentVBox" alignment="CENTER" fillWidth="false" prefHeight="1193.0" prefWidth="1126.0" spacing="10" style="-fx-background-color: #1a1a1a">
                     <padding>
-                        <Insets bottom="10" left="10" right="10" top="10" />
+                        <Insets bottom="10.0" left="10.0" right="200.0" top="10.0" />
                     </padding>
                     <children>
                         <Label style="-fx-text-fill: black;" styleClass="title-label" text="ANALYTICS">
@@ -133,6 +168,9 @@
                     </children>
                 </VBox>
             </content>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
         </ScrollPane>
     </children>
 </HBox>

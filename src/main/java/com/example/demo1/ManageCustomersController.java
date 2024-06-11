@@ -1,5 +1,6 @@
 package com.example.demo1;
 
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,6 +12,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -56,7 +60,49 @@ public class ManageCustomersController {
     public void showAnalytics(ActionEvent event) throws IOException {
         MainController.loadScene("analytics.fxml");
     }
+    @FXML
+    private VBox sidebar;
+    private boolean sidebarVisible = false;
+    @FXML
+    private AnchorPane contentPane;
 
+    @FXML
+    private void toggleSidebar(ActionEvent event) {
+        if (sidebarVisible) {
+            hideSidebar();
+        } else {
+            showSidebar();
+        }
+        sidebarVisible = !sidebarVisible;
+    }
+
+    private void showSidebar() {
+        sidebar.setVisible(true);
+        TranslateTransition sidebarTransition = new TranslateTransition(Duration.millis(300), sidebar);
+        sidebarTransition.setFromX(-200);
+        sidebarTransition.setToX(0);
+
+        TranslateTransition contentTransition = new TranslateTransition(Duration.millis(300), contentPane);
+        contentTransition.setFromX(0);
+        contentTransition.setToX(200);
+
+        sidebarTransition.play();
+        contentTransition.play();
+    }
+
+    private void hideSidebar() {
+        TranslateTransition sidebarTransition = new TranslateTransition(Duration.millis(300), sidebar);
+        sidebarTransition.setFromX(0);
+        sidebarTransition.setToX(-200);
+        sidebarTransition.setOnFinished(e -> sidebar.setVisible(false));
+
+        TranslateTransition contentTransition = new TranslateTransition(Duration.millis(300), contentPane);
+        contentTransition.setFromX(200);
+        contentTransition.setToX(0);
+
+        sidebarTransition.play();
+        contentTransition.play();
+    }
     @FXML
     public void initialize() {
         customerIdColumn.setCellValueFactory(new PropertyValueFactory<>("id"));

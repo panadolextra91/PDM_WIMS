@@ -11,7 +11,7 @@
     /*-fx-text-fill: white;*/
     -fx-font-size: 50pt;
     -fx-font-weight: bold;
-    -fx-font-family: 'Optima';
+    -fx-font-family: 'Impact';
 }
 
 .search-field {
@@ -26,7 +26,7 @@
 
 .search-field:focused {
     -fx-background-radius: 10; /* Add background radius */
-    -fx-border-color: hotpink;
+    -fx-border-color: grey;
     -fx-border-width: 0.5; /* Add border width */
     -fx-border-radius: 10; /* Add border radius */
 }
